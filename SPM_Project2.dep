@@ -1,0 +1,1313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>2</fileVersion>
+    <fileChecksum>2536890889</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\src\synergy_gen\cli.c</file>
+            <file>$PROJ_DIR$\src\synergy_gen\menu_builder.h</file>
+            <file>$PROJ_DIR$\src\synergy_gen\pin_data.c</file>
+            <file>$PROJ_DIR$\src\synergy_gen\uart_thread0.h</file>
+            <file>$PROJ_DIR$\src\synergy_gen\cli.h</file>
+            <file>$PROJ_DIR$\src\synergy_gen\main.c</file>
+            <file>$PROJ_DIR$\src\synergy_gen\blinky_thread.h</file>
+            <file>$PROJ_DIR$\src\synergy_gen\common_data.c</file>
+            <file>$PROJ_DIR$\src\synergy_gen\common_data.h</file>
+            <file>$PROJ_DIR$\src\synergy_gen\hal_data.c</file>
+            <file>$PROJ_DIR$\src\synergy_gen\blinky_thread.c</file>
+            <file>$PROJ_DIR$\src\synergy_gen\uart_thread0.c</file>
+            <file>$PROJ_DIR$\src\blinky_thread_entry.c</file>
+            <file>$PROJ_DIR$\src\hal_entry.c</file>
+            <file>$PROJ_DIR$\src\synergy_gen\hal_data.h</file>
+            <file>$PROJ_DIR$\src\uart_thread0_entry.c</file>
+            <file>$PROJ_DIR$\synergy\board\s7g2_sk\bsp_qspi.c</file>
+            <file>$PROJ_DIR$\synergy\board\s7g2_sk\bsp_init.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\bsp\cmsis\Include\core_cm23.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\bsp\bsp_api.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\driver\api\r_fmi_api.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\driver\api\r_transfer_api.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\driver\api\r_uart_api.h</file>
+            <file>$PROJ_DIR$\synergy\board\s7g2_sk\bsp_leds.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\bsp\cmsis\Include\arm_const_structs.h</file>
+            <file>$PROJ_DIR$\src\synergy_gen\MenuBuilder.c</file>
+            <file>$PROJ_DIR$\synergy\board\s7g2_sk\bsp_ethernet_phy.h</file>
+            <file>$PROJ_DIR$\synergy\board\s7g2_sk\bsp_init.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\bsp\cmsis\Include\arm_common_tables.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\bsp\cmsis\Include\cmsis_version.h</file>
+            <file>$PROJ_DIR$\synergy\board\s7g2_sk\bsp_leds.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\bsp\cmsis\Include\arm_math.h</file>
+            <file>$PROJ_DIR$\synergy\board\s7g2_sk\bsp.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\bsp\cmsis\Include\cmsis_armclang.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\bsp\cmsis\Include\core_armv8mbl.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\bsp\cmsis\Include\core_armv8mml.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\bsp\cmsis\Include\core_cm0plus.h</file>
+            <file>$PROJ_DIR$\synergy\board\s7g2_sk\bsp_qspi.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\bsp\cmsis\Include\cmsis_compiler.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\bsp\cmsis\Include\cmsis_gcc.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\bsp\cmsis\Include\core_cm4.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\bsp\cmsis\Include\mpu_armv7.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\bsp\cmsis\Include\tz_context.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\driver\api\r_cgc_api.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\driver\api\r_elc_api.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\driver\api\r_ioport_api.h</file>
+            <file>$PROJ_DIR$\synergy_cfg\ssp_cfg\driver\r_elc_cfg.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_sbrk.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\MenuBuilder.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\uart_thread0_entry.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\pin_data.__cstat.et</file>
+            <file>$PROJ_DIR$\synergy_cfg\ssp_cfg\bsp\bsp_clock_cfg.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_hw_locks.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\blinky_thread_entry.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\system_S7G2.__cstat.et</file>
+            <file>$PROJ_DIR$\synergy_cfg\ssp_cfg\bsp\bsp_mcu_family_cfg.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\MenuBuilder.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\system_S7G2.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_locking.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_register_protection.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\common_data.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_fmi.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_group_irq.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\sf_uart_comms.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\assert.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_common_leds.o</file>
+            <file>$PROJ_DIR$\synergy_cfg\ssp_cfg\driver\r_dtc_cfg.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\hal_entry.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_rom_registers.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_dtc.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\common_data.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_feature.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_sci_uart.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$PROJ_DIR$\synergy_cfg\ssp_cfg\framework\sf_uart_comms_cfg.h</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_hw_locks.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\iccarm_builtin.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_fmi.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_clocks.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_dtc.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_common_leds.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\uart_thread0.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+            <file>$PROJ_DIR$\synergy_cfg\ssp_cfg\bsp\bsp_board_cfg.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_irq.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_sci_uart.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\pin_data.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_ioport.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup_S7G2.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_rom_registers.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_locking.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_module_stop.pbi</file>
+            <file>$PROJ_DIR$\Debug\Exe\SPM_Project2.out</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_fmi_R7FS7G27H3A01CFC.__cstat.et</file>
+            <file>$PROJ_DIR$\synergy_cfg\ssp_cfg\bsp\bsp_cfg.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_register_protection.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\blinky_thread_entry.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_hw_locks.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\c\ctype.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_group_irq.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_register_protection.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_fmi_R7FS7G27H3A01CFC.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_clocks.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\blinky_thread.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\hal_data.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_rom_registers.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\sf_uart_comms.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\blinky_thread_entry.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_init.o</file>
+            <file>$PROJ_DIR$\synergy_cfg\ssp_cfg\bsp\bsp_mcu_device_cfg.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_fmi.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\c\inttypes.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\cli.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_sci_uart.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_cgc.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\hal_data.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_leds.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_qspi.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\cli.__cstat.et</file>
+            <file>$PROJ_DIR$\synergy_cfg\ssp_cfg\bsp\bsp_pin_cfg.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_leds.pbi</file>
+            <file>$PROJ_DIR$\synergy_cfg\ssp_cfg\driver\r_ioport_cfg.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+            <file>$PROJ_DIR$\synergy_cfg\ssp_cfg\framework\el\tx_user.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_cgc.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_feature.pbi</file>
+            <file>$PROJ_DIR$\synergy_cfg\ssp_cfg\bsp\bsp_mcu_device_pn_cfg.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\hal_data.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\uart_thread0_entry.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_delay.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\blinky_thread.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_cache.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_common.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_ioport.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_common.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_common.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_delay.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\system_S7G2.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\uart_thread0.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\hal_entry.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_locking.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_elc.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_common_leds.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\uart_thread0_entry.o</file>
+            <file>$PROJ_DIR$\synergy_cfg\ssp_cfg\driver\r_sci_uart_cfg.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\hal_entry.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_group_irq.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_locking.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_module_stop.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_rom_registers.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_cgc\hw\hw_cgc.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_feature.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_cgc\hw\hw_cgc_private.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_cgc\r_cgc.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_feature.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_cgc\r_cgc_private.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_irq.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_register_protection.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_cgc\r_cgc_private_api.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_fmi_R7FS7G27H3A01CFC.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_locking.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_dtc\hw\common\hw_dtc_common.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_cache.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_cache.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_dtc\hw\hw_dtc_private.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_dtc\r_dtc.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_dtc\r_dtc_private_api.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_analog.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_register_protection.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_sbrk.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_elc.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_mcu_api.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_group_irq.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_hw_locks.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_irq.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_error_checking.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_clocks.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_mcu_info.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\driver\instances\r_cgc.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_common_analog.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\framework\el\tx_initialize.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\cmsis\Device\RENESAS\S7G2\Source\system_S7G2.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\framework\el\tx_cmsis.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_common_leds.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\framework\el\tx_api.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\framework\api\sf_comms_api.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_common.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_common.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_compiler_support.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\cmsis\DSP_Lib\cm4_iar\libDSP_Lib.a</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\driver\instances\r_dtc.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\framework\el\cm4_iar\tx_port.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\driver\instances\r_sci_uart.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_clocks.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_delay.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\framework\instances\sf_uart_comms.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\driver\instances\r_elc.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\framework\el\tx_port.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\driver\instances\r_ioport.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\framework\el\tx_trace.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\ssp_features.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\ssp_version.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\cmsis\Device\RENESAS\S7G2\Include\system_S7G2.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_common_leds.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_delay.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\cmsis\Device\RENESAS\S7G2\Include\S7G2.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\driver\instances\r_fmi.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\inc\ssp_common_api.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\bsp\cmsis\Device\RENESAS\S7G2\Source\startup_S7G2.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\sf_uart_comms.o</file>
+            <file>$PROJ_DIR$\script\s7g2.icf</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_fmi\hw\hw_fmi_private.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\framework\sf_uart_comms\sf_uart_comms_private.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_fmi\hw\common\hw_fmi_common.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_ioport\hw\hw_ioport_private.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_sci_uart\hw\hw_sci_common.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_elc\r_elc.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_elc\hw\common\hw_elc_common.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_ioport\r_ioport_private.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_sci_uart\r_sci_uart_private_api.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_ioport\r_ioport_private_api.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_fmi\r_fmi.c</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_sci_uart\hw\hw_sci_uart_private.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_elc\r_elc_private.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\framework\sf_uart_comms\sf_uart_comms_private_api.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_ioport\r_ioport.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_fmi_R7FS7G27H3A01CFC.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_clocks.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_qspi.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_cgc.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\MenuBuilder.__cstat.et</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\framework\el\tx\cm4_iar\libtx.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_sbrk.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_dtc.o</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_elc\r_elc_private_api.h</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_sci_uart\r_sci_uart.c</file>
+            <file>$PROJ_DIR$\Debug\List\SPM_Project2.map</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\driver\r_elc\hw\hw_elc_private.h</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$PROJ_DIR$\synergy\ssp\src\framework\sf_uart_comms\sf_uart_comms.c</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\common_data.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_ioport.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_feature.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\blinky_thread.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_elc.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_cache.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_init.__cstat.et</file>
+            <file>$PROJ_DIR$\synergy_cfg\ssp_cfg\driver\r_cgc_cfg.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\pin_data.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\SPM_Project2.pbd</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_init.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_module_stop.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_group_irq.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_delay.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_irq.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_cache.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_sbrk.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\r_elc.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_module_stop.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\cli.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_qspi.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_irq.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp_leds.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup_S7G2.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\uart_thread0.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup_S7G2.o</file>
+        </outputs>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 96 250</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\synergy_gen\cli.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 116</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 276</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 123</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115 134 256 225 80 142 156 137 74 281 63 127 117 139 102 1 4</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 225 4 256 80 134 281 102 74 137 127 139 1 142 156 63 117 115</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\synergy_gen\pin_data.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 264</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 90</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 50</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 211 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 126</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 55 206 220 45 65 188 225 40 78 201 170 216 113 183 29 32 19 98 169 213 167 214 80 51 180 38 256 37 271 126 200 160 159 219 217 184 134 142 156 86 131 190 218 176 215 41 17 139 211 152 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\synergy_gen\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 85</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 280</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 197 210 204 128 127 117 281 63 88 195 4 115 1</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 271 37 74 170 225 216 113 183 256 206 188 65 55 40 281 4 98 169 213 167 214 80 19 51 180 78 32 220 201 134 197 1 200 160 159 45 219 217 184 142 156 86 131 190 218 176 215 41 17 139 195 29 38 152 192 23 26 20 210 204 128 127 88 117 63 115</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\synergy_gen\common_data.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 71</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 60</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 255</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 8 256 134 225 80 142 156 19 220 65 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 209 46 44 191 263 43 211 126</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 159 40 271 134 80 20 184 55 26 74 139 43 200 219 113 183 29 19 44 45 220 160 217 256 51 180 38 192 201 209 191 211 225 142 156 98 170 169 206 213 216 167 188 65 214 86 131 190 218 176 215 152 23 126 8 41 78 32 17 37 46 263</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\synergy_gen\hal_data.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 132</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 120</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 108</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 14 256 134 225 80 142 156 19 220 65 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 8 209 46 44 191 263 43 211 126</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32 45 220 256 19 8 160 217 51 180 38 78 201 134 80 200 159 219 184 55 113 183 40 29 225 37 271 44 142 156 98 170 169 206 213 216 167 188 65 214 86 131 190 218 176 215 41 17 139 20 43 126 14 152 192 23 26 74 209 191 211 46 263</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\synergy_gen\blinky_thread.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 107</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 259</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 136</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 6 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 197 210 204 128 127 117 281 63 88 195 14 8 209 46 44 191 263 43 211 126</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 45 215 78 201 220 142 281 256 86 197 160 217 190 176 32 19 74 200 159 219 184 134 156 51 131 218 225 37 271 44 14 98 170 169 206 213 216 167 188 65 214 80 55 113 183 180 40 41 17 139 195 20 43 126 6 29 38 152 192 23 26 210 204 128 127 88 117 63 8 209 191 211 46 263</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\synergy_gen\uart_thread0.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 147</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 283</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 84</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 3 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 197 210 204 128 127 117 281 63 88 195 14 8 209 46 44 191 263 43 211 126 203 21 67 205 22 155 208 198 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 134 184 256 21 159 51 23 219 197 200 156 131 218 38 225 74 19 67 22 220 160 45 217 142 86 190 176 215 152 139 65 210 127 117 191 44 155 198 14 203 205 208 98 170 169 206 213 216 167 188 214 80 55 113 183 180 40 29 192 26 271 201 20 204 128 88 63 78 8 209 211 43 3 41 32 17 37 281 195 46 263 126 75</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\blinky_thread_entry.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 53</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 111</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 100</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 6 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 197 210 204 128 127 117 281 63 88 195 14 8 209 46 44 191 263 43 211 126</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 45 214 78 201 213 281 98 19 220 14 169 167 80 51 180 256 32 74 170 206 216 188 65 225 55 113 183 40 37 271 44 197 200 160 159 219 217 184 134 142 156 86 131 190 218 176 215 41 17 139 195 20 43 126 6 29 38 152 192 23 26 210 204 128 127 88 117 63 8 209 191 211 46 263</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\hal_entry.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 157</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 68</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 148</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 14 256 134 225 80 142 156 19 220 65 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 8 209 46 44 191 263 43 211 126</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32 45 220 256 19 8 160 217 51 180 38 78 201 134 80 200 159 219 184 55 113 183 40 29 225 37 271 44 142 156 98 170 169 206 213 216 167 188 65 214 86 131 190 218 176 215 41 17 139 20 43 126 14 152 192 23 26 74 209 191 211 46 263</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\uart_thread0_entry.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 154</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 49</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 133</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 137 134 225 80 142 156 74 3 19 220 65 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 197 210 204 128 127 117 281 63 88 195 14 8 209 46 44 191 263 43 211 126 203 21 67 205 22 155 208 198 75 4 115</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 128 51 220 38 139 209 19 225 22 45 256 134 160 217 131 218 23 204 63 8 43 4 80 197 21 200 159 219 184 86 190 176 215 152 65 20 88 78 211 3 74 142 156 14 203 205 208 98 170 169 206 213 216 167 188 214 55 113 183 180 40 29 192 26 271 201 210 127 117 191 44 67 155 198 137 41 32 17 37 281 195 46 263 126 75 115</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\board\s7g2_sk\bsp_qspi.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 122</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 242</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 277</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 206 113 32 225 183 29 188 19 170 216 65 55 40 78 220 201 98 169 213 167 214 80 51 180 38 256 37 271 200 160 159 45 219 217 184 134 142 156 86 131 190 218 176 215 41 17 139 152 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\synergy_gen\MenuBuilder.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 56</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 48</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 244</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 137 134 225 80 142 156 74 281 63 127 117 256 115 4 1 6 19 220 65 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 197 210 204 128 88 195 14 8 209 46 44 191 263 43 211 126</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 256 225 45 19 220 37 43 115 80 134 14 160 217 51 180 201 281 126 127 1 74 200 159 219 184 55 113 183 40 78 32 271 20 263 4 6 142 156 63 117 197 98 170 169 206 213 216 167 188 65 214 86 131 190 218 176 215 41 17 139 195 44 46 137 29 38 152 192 23 26 210 204 128 88 8 209 191 211</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\board\s7g2_sk\bsp_init.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 112</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 266</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 262</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 225 32 216 40 170 65 55 19 206 188 113 183 29 78 220 201 98 169 213 167 214 80 51 180 38 152 256 37 271 200 160 159 45 219 217 184 134 142 156 86 131 190 218 176 215 41 17 139 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\board\s7g2_sk\bsp_leds.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 279</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 125</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 121</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32 142 217 215 160 256 86 19 220 45 190 176 41 78 201 98 200 159 219 184 134 156 51 131 218 225 37 271 170 169 206 213 216 167 188 65 214 80 55 113 183 180 40 29 38 152 17 139 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\SPM_Project2.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 250</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 223 107 53 138 81 143 66 135 258 105 62 52 112 270 279 94 267 122 59 93 246 116 71 132 157 202 245 158 56 264 243 247 260 79 91 89 222 284 146 147 154 252 149 76 254</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_module_stop.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 267</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 95</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 275</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 169 32 214 167 19 98 213 80 51 180 38 78 220 201 170 206 216 188 65 225 55 113 183 40 29 256 37 271 200 160 159 45 219 217 184 134 142 156 86 131 190 218 176 215 41 17 139 152 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_rom_registers.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 93</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 69</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 109</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32 188 206 225 113 183 29 19 170 216 65 55 40 78 220 201 98 169 213 167 214 80 51 180 38 152 256 37 271 200 160 159 45 219 217 184 134 142 156 86 131 190 218 176 215 41 17 139 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_feature.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 258</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 130</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 72</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 167 256 134 225 80 142 156 51 191 19 220 65 214 98 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 184 188 263 43</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 176 190 200 219 134 98 142 263 159 184 55 215 256 139 65 191 225 156 220 160 45 217 19 131 218 41 17 51 80 43 170 169 206 213 216 167 188 214 86 113 183 180 40 29 38 78 32 37 271 201 152 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\driver\r_cgc\r_cgc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 243</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 129</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 119</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 191 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 263 43 168 171 165 163 197 210 204 128 127 117 281 63 88 195</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 225 170 216 113 183 38 195 263 43 206 188 65 55 40 23 134 256 171 19 98 169 213 167 214 80 51 180 152 139 220 168 165 163 197 200 160 159 45 219 217 184 142 156 86 131 190 218 176 215 29 192 26 271 201 74 20 281 191 41 78 32 17 37 210 204 128 127 88 117 63</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_fmi_R7FS7G27H3A01CFC.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 105</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 240</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 97</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_locking.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 94</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 58</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 150</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 86 32 160 256 217 142 215 19 220 45 190 176 41 78 201 98 200 159 219 184 134 156 51 131 218 225 37 271 170 169 206 213 216 167 188 65 214 80 55 113 183 180 40 29 38 152 17 139 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_cache.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 138</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 272</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 261</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32 200 51 219 134 19 159 184 156 131 218 256 78 220 201 98 160 45 217 142 86 190 176 215 41 225 37 271 170 169 206 213 216 167 188 65 214 80 55 113 183 180 40 29 38 152 17 139 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\driver\r_dtc\r_dtc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 247</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 70</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 82</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 281 134 225 80 142 156 74 63 203 19 220 65 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 21 44 67 177 174 179 209 46</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 180 19 65 51 225 206 271 188 38 26 74 209 80 170 216 220 46 177 67 98 169 213 167 214 55 113 183 40 29 192 201 256 203 179 134 63 142 156 21 200 160 159 45 219 217 184 86 131 190 218 176 215 152 23 139 20 281 41 78 32 17 37 44 174</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_register_protection.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 104</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 99</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 256 32 41 220 45 190 176 19 160 217 142 86 215 78 201 98 200 159 219 184 134 156 51 131 218 225 37 271 170 169 206 213 216 167 188 65 214 80 55 113 183 180 40 29 38 152 17 139 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_sbrk.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 246</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 273</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 47</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_group_irq.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 62</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 268</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 103</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32 220 41 256 45 190 176 19 160 217 142 86 215 78 201 98 200 159 219 184 134 156 51 131 218 225 37 271 170 169 206 213 216 167 188 65 214 80 55 113 183 180 40 29 38 152 17 139 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_hw_locks.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 52</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 77</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 101</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32 220 45 190 176 19 160 217 256 142 86 215 78 201 98 200 159 219 184 134 156 51 131 218 225 37 271 170 169 206 213 216 167 188 65 214 80 55 113 183 180 40 29 38 41 17 139 152 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_irq.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 270</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 87</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 278</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 44</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 152 220 214 169 167 19 139 65 98 213 80 51 180 38 170 206 216 188 225 55 113 183 40 29 23 134 256 44 200 160 159 45 219 217 184 142 156 86 131 190 218 176 215 41 192 26 271 201 74 20 78 32 17 37</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\s7g2\bsp_clocks.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 81</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 241</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 106</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 43 191 263</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 256 74 219 134 131 218 26 139 200 156 271 159 184 51 43 220 160 45 217 142 86 190 176 215 192 201 20 19 191 98 170 169 206 213 216 167 188 65 214 225 80 55 113 183 180 40 29 38 152 23 263 41 78 32 17 37</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\cmsis\Device\RENESAS\S7G2\Source\system_S7G2.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 146</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 57</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 54</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 209 46 44 127 117 228 211 126 124</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 188 220 206 225 113 183 29 139 65 170 216 55 40 152 19 126 219 124 98 169 213 167 214 80 51 180 38 23 134 256 44 209 127 228 200 160 159 45 217 184 142 156 86 131 190 218 176 215 192 26 271 201 74 20 117 41 78 32 17 37 46 211</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_common_leds.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 66</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 83</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 153</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 134 32 219 200 51 19 159 184 156 131 218 256 78 220 201 98 160 45 217 142 86 190 176 215 41 225 37 271 170 169 206 213 216 167 188 65 214 80 55 113 183 180 40 29 38 152 17 139 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_common.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 143</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 140</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 144</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32 134 219 200 51 19 159 184 156 131 218 256 78 220 201 98 160 45 217 142 86 190 176 215 41 225 37 271 170 169 206 213 216 167 188 65 214 80 55 113 183 180 40 29 38 17 139 152 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\mcu\all\bsp_delay.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 135</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 269</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 145</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32 256 160 86 217 142 215 19 220 45 190 176 41 78 201 98 200 159 219 184 134 156 51 131 218 225 37 271 170 169 206 213 216 167 188 65 214 80 55 113 183 180 40 29 38 152 17 139 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\bsp\cmsis\Device\RENESAS\S7G2\Source\startup_S7G2.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 284</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 92</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 282</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32 188 206 225 113 183 29 19 170 216 65 55 40 78 220 201 98 169 213 167 214 80 51 180 38 152 256 37 271 200 160 159 45 219 217 184 134 142 156 86 131 190 218 176 215 41 17 139 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\driver\r_elc\r_elc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 260</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 274</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 151</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 209 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 46 44 237 251 231 248</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 134 218 159 131 256 220 184 156 139 65 200 219 51 152 19 231 248 46 160 45 217 142 86 190 176 215 41 23 225 237 44 98 170 169 206 213 216 167 188 214 80 55 113 183 180 40 29 38 192 26 271 201 74 20 209 78 32 17 37 251</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\driver\r_fmi\r_fmi.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 79</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 61</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 114</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\driver\r_ioport\r_ioport.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 91</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 141</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 257</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 256 134 225 80 142 156 211 19 220 65 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 126 232 228 234</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 256 19 98 131 218 156 213 214 32 228 225 169 167 51 78 220 201 232 142 45 170 206 216 188 65 86 190 176 215 37 271 211 234 134 80 126 200 160 159 219 217 184 55 113 183 180 40 29 38 41 17 139 152 192 23 26 74 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\driver\r_sci_uart\r_sci_uart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 89</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 118</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 73</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 220 65 134 225 80 142 156 256 214 98 51 55 131 113 190 218 40 29 38 152 78 41 215 183 176 180 192 86 32 17 23 37 139 26 200 271 74 201 170 160 169 159 206 45 213 219 20 216 217 167 184 188 205 22 21 44 155 236 233 191 263 43 229 211 126</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 55 206 17 65 263 188 225 40 19 191 170 216 113 183 41 256 98 134 45 126 236 211 169 213 167 214 80 51 180 139 21 205 233 229 220 200 160 159 219 217 184 142 156 86 131 190 218 176 215 78 32 37 271 201 22 44 29 38 152 192 23 26 74 20 155 43</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\synergy\ssp\src\framework\sf_uart_comms\sf_uart_comms.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 222</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 64</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 110</file>
+                </tool>
+            </outputs>
+        </file>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>

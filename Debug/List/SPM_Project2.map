@@ -1,0 +1,2259 @@
+###############################################################################
+#
+# IAR ELF Linker V8.23.3.18520/W32 for ARM                08/Jan/2024  12:39:25
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  C:\SPM_Project_ws2\Debug\Exe\SPM_Project2.out
+#    Map file     =  C:\SPM_Project_ws2\Debug\List\SPM_Project2.map
+#    Command line =  
+#        -f C:\Users\Hazem\AppData\Local\Temp\EW8913.tmp
+#        (C:\SPM_Project_ws2\Debug\Obj\blinky_thread.o
+#        C:\SPM_Project_ws2\Debug\Obj\blinky_thread_entry.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_cache.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_clocks.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_common.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_common_leds.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_delay.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_feature.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_fmi_R7FS7G27H3A01CFC.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_group_irq.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_hw_locks.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_init.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_irq.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_leds.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_locking.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_module_stop.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_qspi.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_register_protection.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_rom_registers.o
+#        C:\SPM_Project_ws2\Debug\Obj\bsp_sbrk.o
+#        C:\SPM_Project_ws2\Debug\Obj\cli.o
+#        C:\SPM_Project_ws2\Debug\Obj\common_data.o
+#        C:\SPM_Project_ws2\Debug\Obj\hal_data.o
+#        C:\SPM_Project_ws2\Debug\Obj\hal_entry.o
+#        C:\SPM_Project_ws2\synergy\ssp\src\bsp\cmsis\DSP_Lib\cm4_iar\libDSP_Lib.a
+#        C:\SPM_Project_ws2\synergy\ssp\src\framework\el\tx\cm4_iar\libtx.a
+#        C:\SPM_Project_ws2\Debug\Obj\main.o
+#        C:\SPM_Project_ws2\Debug\Obj\MenuBuilder.o
+#        C:\SPM_Project_ws2\Debug\Obj\pin_data.o
+#        C:\SPM_Project_ws2\Debug\Obj\r_cgc.o
+#        C:\SPM_Project_ws2\Debug\Obj\r_dtc.o
+#        C:\SPM_Project_ws2\Debug\Obj\r_elc.o
+#        C:\SPM_Project_ws2\Debug\Obj\r_fmi.o
+#        C:\SPM_Project_ws2\Debug\Obj\r_ioport.o
+#        C:\SPM_Project_ws2\Debug\Obj\r_sci_uart.o
+#        C:\SPM_Project_ws2\Debug\Obj\sf_uart_comms.o
+#        C:\SPM_Project_ws2\Debug\Obj\startup_S7G2.o
+#        C:\SPM_Project_ws2\Debug\Obj\system_S7G2.o
+#        C:\SPM_Project_ws2\Debug\Obj\uart_thread0.o
+#        C:\SPM_Project_ws2\Debug\Obj\uart_thread0_entry.o -o
+#        C:\SPM_Project_ws2\Debug\Exe\SPM_Project2.out --map
+#        C:\SPM_Project_ws2\Debug\List\SPM_Project2.map --config
+#        C:\SPM_Project_ws2/script/s7g2.icf --semihosting --entry Reset_Handler
+#        --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+__CPP_Exceptions = *
+__CPP_Language   = C++14
+__Heap_Handler   = Basic
+__SystemLibrary  = DLib
+__dlib_version   = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at start of [from 0x00000000 to 0x000003ff] {
+          ro section .vectors };
+"P1":  place in [from 0x00000000 to 0x000003ff] { ro section .vector.* };
+"P2":  place in [from 0x00000400 to 0x000004ff] { ro section .rom_registers };
+define block VECT_INFO { ro section .vector_info.* };
+"A1":  place at start of [from 0x00000500 to 0x003fffff] { block VECT_INFO };
+define block LOCK_LOOKUP { ro section .hw_lock_lookup.* };
+define block QSPI_NON_RETENTIVE_INIT_BLOCK { section .qspi_non_retentive_init };
+define block RAM_INIT_CODE { section .code_in_ram_init };
+define block USB_DEV_DESC_BLK
+   with fixed order, alignment = 1 {
+      ro data section .usb_device_desc_fs, ro data section .usb_config_desc_fs,
+      ro data section .usb_interface_desc_fs,
+      ro data section .usb_device_desc_hs, ro data section .usb_config_desc_hs,
+      ro data section .usb_interface_desc_hs,
+      ro data section .usb_dev_descriptor_start_fs,
+      ro data section .usb_descriptor_end_fs };
+"P3":  place in [from 0x00000500 to 0x003fffff] {
+          block LOCK_LOOKUP, ro, ro section .rodata,
+          block QSPI_NON_RETENTIVE_INIT_BLOCK, block RAM_INIT_CODE,
+          block USB_DEV_DESC_BLK };
+"A2":  place at start of [from 0x1ffe0000 to 0x2007ffff] {
+          rw section .ssp_dtc_vector_table };
+define block HW_LOCK with alignment = 1 { rw section .hw_lock.* };
+define block RAM_CODE { section .code_in_ram };
+"P4":  place in [from 0x1ffe0000 to 0x2007ffff] {
+          rw, rw section .noinit, rw section .bss, rw section .data,
+          block HW_LOCK, rw section HEAP, rw section .stack, block RAM_CODE };
+"P9":  place in [from 0x1ffe0000 to 0x2007ffff] { last section FREE_MEM };
+"P10": place in [from 0x40120050 to 0x4012005f] {
+          ro section .id_code_1, ro section .id_code_2, ro section .id_code_3,
+          ro section .id_code_4 };
+do not initialize { zi };
+initialize manually with packing = copy, complex ranges { rw };
+keep { section .vector* };
+keep { section .hw_lock_lookup* };
+keep { section .hw_lock.* };
+
+No sections matched the following patterns:
+
+  ro data section .usb_config_desc_fs           in block USB_DEV_DESC_BLK
+  ro data section .usb_config_desc_hs           in block USB_DEV_DESC_BLK
+  ro data section .usb_descriptor_end_fs        in block USB_DEV_DESC_BLK
+  ro data section .usb_dev_descriptor_start_fs  in block USB_DEV_DESC_BLK
+  ro data section .usb_device_desc_fs           in block USB_DEV_DESC_BLK
+  ro data section .usb_device_desc_hs           in block USB_DEV_DESC_BLK
+  ro data section .usb_interface_desc_fs        in block USB_DEV_DESC_BLK
+  ro data section .usb_interface_desc_hs        in block USB_DEV_DESC_BLK
+  ro section .data_flash                        in "P5"
+  ro section .id_code_2                         in "P10"
+  ro section .id_code_3                         in "P10"
+  ro section .id_code_4                         in "P10"
+  rw section .frame                             in "P6"
+  rw section .sdram                             in "P6"
+  section .code_in_ram                          in block RAM_CODE
+  section .code_in_ram_init                     in block RAM_INIT_CODE
+  section .qspi_flash                           in "P7-P8"
+  section .qspi_non_retentive                   in block QSPI_NON_RETENTIVE_BLOCK
+  section .qspi_non_retentive_init              in block QSPI_NON_RETENTIVE_INIT_BLOCK
+
+
+  Section                 Kind        Address    Size  Object
+  -------                 ----        -------    ----  ------
+"A0":                                            0x40
+  .vectors                const    0x00000000    0x40  startup_S7G2.o [1]
+                                 - 0x00000040    0x40
+
+"P1":                                            0x10
+  .vector.SCI_0_ERI       const    0x00000040     0x4  uart_thread0.o [1]
+  .vector.SCI_0_RXI       const    0x00000044     0x4  uart_thread0.o [1]
+  .vector.SCI_0_TEI       const    0x00000048     0x4  uart_thread0.o [1]
+  .vector.SCI_0_TXI       const    0x0000004c     0x4  uart_thread0.o [1]
+                                 - 0x00000050    0x10
+
+"P2":                                            0x3c
+  .rom_registers          const    0x00000400    0x3c  bsp_rom_registers.o [1]
+                                 - 0x0000043c    0x3c
+
+"A1":                                            0x20
+  VECT_INFO                        0x00000500    0x20  <Block>
+    .vector_info.SCI_0_ERI
+                          const    0x00000500     0x8  uart_thread0.o [1]
+    .vector_info.SCI_0_RXI
+                          const    0x00000508     0x8  uart_thread0.o [1]
+    .vector_info.SCI_0_TEI
+                          const    0x00000510     0x8  uart_thread0.o [1]
+    .vector_info.SCI_0_TXI
+                          const    0x00000518     0x8  uart_thread0.o [1]
+                                 - 0x00000520    0x20
+
+"P3":                                          0xa1a0
+  .text                   ro code  0x00000520  0x17f0  r_cgc.o [1]
+  .text                   ro code  0x00001d10    0xd0  bsp_register_protection.o [1]
+  .text                   ro code  0x00001de0    0x24  bsp_feature.o [1]
+  .text                   ro code  0x00001e04     0x6  ABImemclr4.o [6]
+  .text                   ro code  0x00001e0a     0xa  xsprout.o [3]
+  .text                   ro code  0x00001e14   0x224  bsp_clocks.o [1]
+  .text                   ro code  0x00002038   0x1ec  bsp_group_irq.o [1]
+  .text                   ro code  0x00002224    0x74  bsp_cache.o [1]
+  .text                   ro code  0x00002298    0x32  ABImemset48.o [6]
+  .rodata                 const    0x000022ca     0x1  bsp_module_stop.o [1]
+  .rodata                 const    0x000022cb     0x1  bsp_module_stop.o [1]
+  .text                   ro code  0x000022cc  0x14a0  r_sci_uart.o [1]
+  .text                   ro code  0x0000376c    0x5c  bsp_irq.o [1]
+  .text                   ro code  0x000037c8    0xe8  bsp_locking.o [1]
+  .text                   ro code  0x000038b0   0x12c  bsp_module_stop.o [1]
+  .text                   ro code  0x000039dc    0x76  ABImemcpy_unaligned.o [6]
+  .rodata                 const    0x00003a52     0x1  r_ioport.o [1]
+  .rodata                 const    0x00003a53     0x1  r_sci_uart.o [1]
+  .text                   ro code  0x00003a54   0x272  I64DivMod.o [6]
+  .text                   ro code  0x00003cc6     0x2  tx_isr_start.o [4]
+  .text                   ro code  0x00003cc8     0x2  tx_isr_end.o [4]
+  .text                   ro code  0x00003ccc     0x2  I64DivZer.o [6]
+  .text                   ro code  0x00003cd0   0x818  cli.o [1]
+  .text                   ro code  0x000044e8    0x40  sprintf.o [3]
+  .text                   ro code  0x00004528    0xfc  uart_thread0_entry.o [1]
+  .text                   ro code  0x00004624    0x42  strcmp_unaligned.o [6]
+  .text                   ro code  0x00004668    0x44  strcpy_unaligned.o [6]
+  .text                   ro code  0x000046ac    0x20  strcat.o [3]
+  .text                   ro code  0x000046cc    0x6c  strncpy_unaligned.o [6]
+  .text                   ro code  0x00004738    0x36  strlen.o [6]
+  .text                   ro code  0x00004770    0x28  printf.o [3]
+  .text                   ro code  0x00004798    0x48  strtok.o [3]
+  .text                   ro code  0x000047e0   0x2cc  MenuBuilder.o [1]
+  .text                   ro code  0x00004aac   0x4d4  xprintfsmall_nomb.o [3]
+  .text                   ro code  0x00004f80    0x64  tx_thread_sleep.o [4]
+  .text                   ro code  0x00004fe4    0x66  ABImemset.o [6]
+  .text                   ro code  0x0000504a    0x22  strspn.o [3]
+  .text                   ro code  0x0000506c    0x22  strcspn.o [3]
+  .text                   ro code  0x0000508e     0xa  isdigit.o [3]
+  .text                   ro code  0x00005098    0x1c  bsp_common_leds.o [1]
+  .text                   ro code  0x000050b4   0x174  iar_Stoulx.o [3]
+  .text                   ro code  0x00005228    0x16  strchr.o [6]
+  .text                   ro code  0x00005240    0x40  xfail_s.o [3]
+  .text                   ro code  0x00005280    0x58  memchr.o [6]
+  .text                   ro code  0x000052d8   0x100  tx_thread_system_suspend.o [4]
+  .text                   ro code  0x000053d8     0x6  abort.o [3]
+  .text                   ro code  0x000053e0    0x60  tx_timer_system_activate.o [4]
+  .text                   ro code  0x00005440    0x14  exit.o [7]
+  .text                   ro code  0x00005454   0x75c  r_ioport.o [1]
+  .text                   ro code  0x00005bb0   0x6c8  r_dtc.o [1]
+  .text                   ro code  0x00006278   0x616  r_fmi.o [1]
+  .text                   ro code  0x00006890    0x62  memcmp_unaligned.o [6]
+  .text                   ro code  0x000068f4   0x47e  sf_uart_comms.o [1]
+  .text                   ro code  0x00006d74    0x54  txe_mutex_get.o [4]
+  .text                   ro code  0x00006dc8    0x38  txe_mutex_put.o [4]
+  .text                   ro code  0x00006e00    0x44  txe_event_flags_get.o [4]
+  .text                   ro code  0x00006e44    0x40  txe_queue_receive.o [4]
+  .text                   ro code  0x00006e84    0x98  txe_mutex_create.o [4]
+  .text                   ro code  0x00006f1c    0x88  txe_event_flags_create.o [4]
+  .text                   ro code  0x00006fa4    0xb4  txe_queue_create.o [4]
+  .text                   ro code  0x00007058    0x2c  txe_mutex_delete.o [4]
+  .text                   ro code  0x00007084    0x2c  txe_event_flags_delete.o [4]
+  .text                   ro code  0x000070b0    0x2c  txe_queue_delete.o [4]
+  .text                   ro code  0x000070dc    0x40  txe_queue_send.o [4]
+  .text                   ro code  0x0000711c    0x2c  txe_event_flags_set.o [4]
+  .text                   ro code  0x00007148   0x104  tx_mutex_get.o [4]
+  .text                   ro code  0x0000724c   0x1be  tx_mutex_put.o [4]
+  .text                   ro code  0x0000740c    0xcc  tx_event_flags_get.o [4]
+  .text                   ro code  0x000074d8   0x1ac  tx_queue_receive.o [4]
+  .text                   ro code  0x00007684    0x3c  tx_thread_system_preempt_check.o [4]
+  .text                   ro code  0x000076c0    0x60  tx_mutex_create.o [4]
+  .text                   ro code  0x00007720    0x4c  tx_event_flags_create.o [4]
+  .text                   ro code  0x0000776c    0x74  tx_queue_create.o [4]
+  .text                   ro code  0x000077e0    0xa4  tx_mutex_delete.o [4]
+  .text                   ro code  0x00007884    0x8c  tx_event_flags_delete.o [4]
+  .text                   ro code  0x00007910    0x8c  tx_queue_delete.o [4]
+  .text                   ro code  0x0000799c   0x118  tx_queue_send.o [4]
+  .text                   ro code  0x00007ab4   0x1bc  tx_event_flags_set.o [4]
+  .text                   ro code  0x00007c70    0xb0  tx_mutex_priority_change.o [4]
+  .text                   ro code  0x00007d20    0x94  tx_mutex_prioritize.o [4]
+  .text                   ro code  0x00007db4    0xf0  tx_thread_system_resume.o [4]
+  .text                   ro code  0x00007ea4    0x2a  tx_timer_system_deactivate.o [4]
+  .rodata                 const    0x00007ed0   0x400  bsp_fmi_R7FS7G27H3A01CFC.o [1]
+  .text                   ro code  0x000082d0   0x3e4  bsp_qspi.o [1]
+  .text                   ro code  0x000086b4    0x6a  bsp_delay.o [1]
+  .rodata                 const    0x00008720   0x378  pin_data.o [1]
+  .text                   ro code  0x00008a98   0x1be  system_S7G2.o [1]
+  .text                   ro code  0x00008c58    0x18  cppinit.o [3]
+  .text                   ro code  0x00008c70     0x8  bsp_init.o [1]
+  .text                   ro code  0x00008c78    0x10  rand.o [3]
+  .text                   ro code  0x00008c88   0x1b4  tx_thread_schedule.o [4]
+  .text                   ro code  0x00008e3c    0xa4  tx_timer_interrupt.o [4]
+  .text                   ro code  0x00008ee0   0x104  tx_timer_expiration_process.o [4]
+  .text                   ro code  0x00008fe4    0x60  tx_thread_time_slice.o [4]
+  LOCK_LOOKUP                      0x00009044   0x1b0  <Block>
+    .hw_lock_lookup.ADC_0U_0U
+                          const    0x00009044     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ADC_0U_1U
+                          const    0x00009048     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.AGT_0U_0U
+                          const    0x0000904c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.AGT_0U_1U
+                          const    0x00009050     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.BSC_0U_1U
+                          const    0x00009054     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.CAC_0U_0U
+                          const    0x00009058     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.CAN_0U_0U
+                          const    0x0000905c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.CAN_0U_1U
+                          const    0x00009060     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.COMP_HS_0U_0U
+                          const    0x00009064     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.COMP_HS_0U_1U
+                          const    0x00009068     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.COMP_HS_0U_2U
+                          const    0x0000906c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.COMP_HS_0U_3U
+                          const    0x00009070     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.COMP_HS_0U_4U
+                          const    0x00009074     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.COMP_HS_0U_5U
+                          const    0x00009078     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.CRC_0U_0U
+                          const    0x0000907c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.CTSU_0U_0U
+                          const    0x00009080     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.DAAD_0U_0U
+                          const    0x00009084     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.DAC_0U_0U
+                          const    0x00009088     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.DAC_0U_1U
+                          const    0x0000908c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.DMAC_0U_0U
+                          const    0x00009090     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.DMAC_0U_1U
+                          const    0x00009094     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.DMAC_0U_2U
+                          const    0x00009098     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.DMAC_0U_3U
+                          const    0x0000909c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.DMAC_0U_4U
+                          const    0x000090a0     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.DMAC_0U_5U
+                          const    0x000090a4     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.DMAC_0U_6U
+                          const    0x000090a8     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.DMAC_0U_7U
+                          const    0x000090ac     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.DOC_0U_0U
+                          const    0x000090b0     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.DRW_0U_0U
+                          const    0x000090b4     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.DTC_0U_0U
+                          const    0x000090b8     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ELC_0U_0U
+                          const    0x000090bc     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.EPTPC_0U_0U
+                          const    0x000090c0     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ETHER_0U_0U
+                          const    0x000090c4     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ETHER_0U_1U
+                          const    0x000090c8     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.FCU_0U_0U
+                          const    0x000090cc     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.GLCDC_0U_0U
+                          const    0x000090d0     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.GPT_0U_0U
+                          const    0x000090d4     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.GPT_0U_10U
+                          const    0x000090d8     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.GPT_0U_11U
+                          const    0x000090dc     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.GPT_0U_12U
+                          const    0x000090e0     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.GPT_0U_13U
+                          const    0x000090e4     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.GPT_0U_1U
+                          const    0x000090e8     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.GPT_0U_2U
+                          const    0x000090ec     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.GPT_0U_3U
+                          const    0x000090f0     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.GPT_0U_4U
+                          const    0x000090f4     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.GPT_0U_5U
+                          const    0x000090f8     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.GPT_0U_6U
+                          const    0x000090fc     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.GPT_0U_7U
+                          const    0x00009100     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.GPT_0U_8U
+                          const    0x00009104     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.GPT_0U_9U
+                          const    0x00009108     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_0U
+                          const    0x0000910c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_10U
+                          const    0x00009110     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_11U
+                          const    0x00009114     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_12U
+                          const    0x00009118     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_13U
+                          const    0x0000911c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_14U
+                          const    0x00009120     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_15U
+                          const    0x00009124     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_1U
+                          const    0x00009128     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_2U
+                          const    0x0000912c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_3U
+                          const    0x00009130     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_4U
+                          const    0x00009134     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_5U
+                          const    0x00009138     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_6U
+                          const    0x0000913c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_7U
+                          const    0x00009140     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_8U
+                          const    0x00009144     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.ICU_0U_9U
+                          const    0x00009148     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.IIC_0U_0U
+                          const    0x0000914c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.IIC_0U_1U
+                          const    0x00009150     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.IIC_0U_2U
+                          const    0x00009154     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.IRDA_0U_0U
+                          const    0x00009158     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.IWDT_0U_0U
+                          const    0x0000915c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.JPEG_0U_0U
+                          const    0x00009160     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.KEY_0U_0U
+                          const    0x00009164     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.LPM_1U_0U
+                          const    0x00009168     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.LVD_0U_0U
+                          const    0x0000916c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.LVD_0U_1U
+                          const    0x00009170     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.MMF_0U_0U
+                          const    0x00009174     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.MPU_0U_0U
+                          const    0x00009178     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.OPS_0U_0U
+                          const    0x0000917c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.PDC_0U_0U
+                          const    0x00009180     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.POEG_0U_0U
+                          const    0x00009184     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.POEG_0U_1U
+                          const    0x00009188     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.POEG_0U_2U
+                          const    0x0000918c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.POEG_0U_3U
+                          const    0x00009190     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.QSPI_0U_0U
+                          const    0x00009194     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.RTC_0U_0U
+                          const    0x00009198     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SCE_0U_0U
+                          const    0x0000919c     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SCI_0U_0U
+                          const    0x000091a0     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SCI_0U_1U
+                          const    0x000091a4     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SCI_0U_2U
+                          const    0x000091a8     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SCI_0U_3U
+                          const    0x000091ac     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SCI_0U_4U
+                          const    0x000091b0     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SCI_0U_5U
+                          const    0x000091b4     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SCI_0U_6U
+                          const    0x000091b8     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SCI_0U_7U
+                          const    0x000091bc     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SCI_0U_8U
+                          const    0x000091c0     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SCI_0U_9U
+                          const    0x000091c4     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SDHIMMC_0U_0U
+                          const    0x000091c8     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SDHIMMC_0U_1U
+                          const    0x000091cc     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SPI_0U_0U
+                          const    0x000091d0     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SPI_0U_1U
+                          const    0x000091d4     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SRC_0U_0U
+                          const    0x000091d8     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SSI_0U_0U
+                          const    0x000091dc     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.SSI_0U_1U
+                          const    0x000091e0     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.TSN_0U_0U
+                          const    0x000091e4     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.USB_0U_0U
+                          const    0x000091e8     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.USB_1U_0U
+                          const    0x000091ec     0x4  bsp_hw_locks.o [1]
+    .hw_lock_lookup.WDT_0U_0U
+                          const    0x000091f0     0x4  bsp_hw_locks.o [1]
+  .text                   ro code  0x000091f4   0x14c  r_elc.o [1]
+  .text                   ro code  0x00009340   0x128  tx_thread_create.o [4]
+  .text                   ro code  0x00009468    0x48  tx_thread_stack_build.o [4]
+  .text                   ro code  0x000094b0   0x114  txe_thread_create.o [4]
+  .text                   ro code  0x000095c4    0xd4  main.o [1]
+  .text                   ro code  0x00009698    0x8c  txe_semaphore_create.o [4]
+  .text                   ro code  0x00009724    0x68  blinky_thread.o [1]
+  .text                   ro code  0x0000978c    0x98  uart_thread0.o [1]
+  .text                   ro code  0x00009824    0x2c  txe_semaphore_get.o [4]
+  .text                   ro code  0x00009850     0x8  hal_data.o [1]
+  .text                   ro code  0x00009858    0x18  txe_semaphore_put.o [4]
+  .text                   ro code  0x00009870    0x44  tx_initialize_kernel_enter.o [4]
+  .text                   ro code  0x000098b4    0x50  tx_semaphore_create.o [4]
+  .text                   ro code  0x00009904    0x1e  blinky_thread_entry.o [1]
+  .text                   ro code  0x00009924    0x8c  tx_semaphore_get.o [4]
+  .text                   ro code  0x000099b0     0x2  common_data.o [1]
+  .text                   ro code  0x000099b4    0x54  tx_semaphore_put.o [4]
+  .text                   ro code  0x00009a08    0x7c  tx_initialize_low_level.o [4]
+  .text                   ro code  0x00009a84    0x2c  tx_initialize_high_level.o [4]
+  .text                   ro code  0x00009ab0    0x38  tx_thread_initialize.o [4]
+  .text                   ro code  0x00009ae8    0x38  tx_timer_initialize.o [4]
+  .text                   ro code  0x00009b20    0xb8  tx_mutex_cleanup.o [4]
+  .text                   ro code  0x00009bd8    0x84  tx_event_flags_cleanup.o [4]
+  .text                   ro code  0x00009c5c    0x84  tx_queue_cleanup.o [4]
+  .rodata                 const    0x00009ce0    0x80  r_fmi.o [1]
+  .data_init                       0x00009d60    0x80  <Block>
+    Initializer bytes     const    0x00009d60    0x80  <for .data-1>
+  .text                   ro code  0x00009de0    0x7c  tx_semaphore_cleanup.o [4]
+  .rodata                 const    0x00009e5c    0x6c  r_cgc.o [1]
+  .version                const    0x00009ec8    0x54  bsp_common.o [1]
+  .rodata                 const    0x00009f1c    0x50  r_sci_uart.o [1]
+  .rodata                 const    0x00009f6c    0x48  bsp_module_stop.o [1]
+  .text                   ro code  0x00009fb4    0x48  tx_thread_shell_entry.o [4]
+  .rodata                 const    0x00009ffc    0x3c  cli.o [1]
+  .rodata                 const    0x0000a038    0x3c  r_ioport.o [1]
+  .rodata                 const    0x0000a074    0x38  cli.o [1]
+  .text                   ro code  0x0000a0ac    0x34  tx_thread_timeout.o [4]
+  .rodata                 const    0x0000a0e0    0x2c  bsp_feature.o [1]
+  .rodata                 const    0x0000a10c    0x28  cli.o [1]
+  .rodata                 const    0x0000a134    0x28  MenuBuilder.o [1]
+  .rodata                 const    0x0000a15c    0x28  r_dtc.o [1]
+  .rodata                 const    0x0000a184    0x24  MenuBuilder.o [1]
+  .rodata                 const    0x0000a1a8    0x24  uart_thread0.o [1]
+  .text                   ro code  0x0000a1cc    0x22  fpinit_M.o [5]
+  .rodata                 const    0x0000a1f0    0x20  r_sci_uart.o [1]
+  .text                   ro code  0x0000a210    0x20  putchar.o [3]
+  .rodata                 const    0x0000a230    0x1c  cli.o [1]
+  .rodata                 const    0x0000a24c    0x1c  MenuBuilder.o [1]
+  .rodata                 const    0x0000a268    0x1c  MenuBuilder.o [1]
+  .rodata                 const    0x0000a284    0x1c  r_elc.o [1]
+  .rodata                 const    0x0000a2a0    0x1c  sf_uart_comms.o [1]
+  .rodata                 const    0x0000a2bc    0x18  MenuBuilder.o [1]
+  .rodata                 const    0x0000a2d4    0x18  MenuBuilder.o [1]
+  .rodata                 const    0x0000a2ec    0x18  MenuBuilder.o [1]
+  .rodata                 const    0x0000a304    0x18  MenuBuilder.o [1]
+  .rodata                 const    0x0000a31c    0x18  MenuBuilder.o [1]
+  .rodata                 const    0x0000a334    0x18  MenuBuilder.o [1]
+  .rodata                 const    0x0000a34c    0x18  MenuBuilder.o [1]
+  .rodata                 const    0x0000a364    0x18  MenuBuilder.o [1]
+  .rodata                 const    0x0000a37c    0x18  MenuBuilder.o [1]
+  .rodata                 const    0x0000a394    0x18  MenuBuilder.o [1]
+  .rodata                 const    0x0000a3ac    0x18  MenuBuilder.o [1]
+  .rodata                 const    0x0000a3c4    0x18  r_fmi.o [1]
+  .rodata                 const    0x0000a3dc    0x18  uart_thread0.o [1]
+  .text                   ro code  0x0000a3f4    0x16  xprout.o [3]
+  .rodata                 const    0x0000a40c    0x14  cli.o [1]
+  .rodata                 const    0x0000a420    0x14  main.o [1]
+  .rodata                 const    0x0000a434    0x14  MenuBuilder.o [1]
+  .rodata                 const    0x0000a448    0x14  uart_thread0.o [1]
+  .rodata                 const    0x0000a45c    0x14  uart_thread0.o [1]
+  .rodata                 const    0x0000a470    0x10  blinky_thread.o [1]
+  .rodata                 const    0x0000a480    0x10  bsp_module_stop.o [1]
+  .rodata                 const    0x0000a490    0x10  cli.o [1]
+  .rodata                 const    0x0000a4a0    0x10  cli.o [1]
+  .rodata                 const    0x0000a4b0    0x10  MenuBuilder.o [1]
+  .rodata                 const    0x0000a4c0    0x10  MenuBuilder.o [1]
+  .text                   ro code  0x0000a4d0    0x10  startup_S7G2.o [1]
+  .rodata                 const    0x0000a4e0     0xc  cli.o [1]
+  .rodata                 const    0x0000a4ec     0xc  sf_uart_comms.o [1]
+  .rodata                 const    0x0000a4f8     0xc  sf_uart_comms.o [1]
+  .rodata                 const    0x0000a504     0xc  system_S7G2.o [1]
+  .rodata                 const    0x0000a510     0xc  uart_thread0.o [1]
+  .rodata                 const    0x0000a51c     0xc  uart_thread0.o [1]
+  .rodata                 const    0x0000a528     0xc  uart_thread0.o [1]
+  .rodata                 const    0x0000a534     0xc  uart_thread0.o [1]
+  .rodata                 const    0x0000a540     0xc  uart_thread0.o [1]
+  .rodata                 const    0x0000a54c     0x8  bsp_leds.o [1]
+  .rodata                 const    0x0000a554     0x8  bsp_leds.o [1]
+  .rodata                 const    0x0000a55c     0x8  bsp_register_protection.o [1]
+  .rodata                 const    0x0000a564     0x8  cli.o [1]
+  .rodata                 const    0x0000a56c     0x8  cli.o [1]
+  .rodata                 const    0x0000a574     0x8  cli.o [1]
+  .rodata                 const    0x0000a57c     0x8  cli.o [1]
+  .rodata                 const    0x0000a584     0x8  cli.o [1]
+  .rodata                 const    0x0000a58c     0x8  cli.o [1]
+  .rodata                 const    0x0000a594     0x8  cli.o [1]
+  .rodata                 const    0x0000a59c     0x8  cli.o [1]
+  .rodata                 const    0x0000a5a4     0x8  cli.o [1]
+  .rodata                 const    0x0000a5ac     0x8  cli.o [1]
+  .rodata                 const    0x0000a5b4     0x8  common_data.o [1]
+  .rodata                 const    0x0000a5bc     0x8  MenuBuilder.o [1]
+  .rodata                 const    0x0000a5c4     0x8  MenuBuilder.o [1]
+  .rodata                 const    0x0000a5cc     0x8  MenuBuilder.o [1]
+  .rodata                 const    0x0000a5d4     0x8  MenuBuilder.o [1]
+  .rodata                 const    0x0000a5dc     0x8  MenuBuilder.o [1]
+  .rodata                 const    0x0000a5e4     0x8  MenuBuilder.o [1]
+  .rodata                 const    0x0000a5ec     0x8  MenuBuilder.o [1]
+  .rodata                 const    0x0000a5f4     0x8  pin_data.o [1]
+  .rodata                 const    0x0000a5fc     0x8  r_cgc.o [1]
+  .rodata                 const    0x0000a604     0x8  r_cgc.o [1]
+  .rodata                 const    0x0000a60c     0x8  r_cgc.o [1]
+  .rodata                 const    0x0000a614     0x8  r_cgc.o [1]
+  .rodata                 const    0x0000a61c     0x8  r_cgc.o [1]
+  .rodata                 const    0x0000a624     0x8  r_fmi.o [1]
+  .rodata                 const    0x0000a62c     0x8  r_ioport.o [1]
+  .rodata                 const    0x0000a634     0x8  r_sci_uart.o [1]
+  .rodata                 const    0x0000a63c     0x8  r_sci_uart.o [1]
+  .rodata                 const    0x0000a644     0x8  r_sci_uart.o [1]
+  .rodata                 const    0x0000a64c     0x8  r_sci_uart.o [1]
+  .version                const    0x0000a654     0x8  bsp_common.o [1]
+  .rodata                 const    0x0000a65c     0x4  bsp_irq.o [1]
+  .rodata                 const    0x0000a660     0x4  r_cgc.o [1]
+  .rodata                 const    0x0000a664     0x4  r_cgc.o [1]
+  .rodata                 const    0x0000a668     0x4  r_dtc.o [1]
+  .rodata                 const    0x0000a66c     0x4  r_dtc.o [1]
+  .rodata                 const    0x0000a670     0x4  r_elc.o [1]
+  .rodata                 const    0x0000a674     0x4  r_elc.o [1]
+  .rodata                 const    0x0000a678     0x4  r_fmi.o [1]
+  .rodata                 const    0x0000a67c     0x4  r_fmi.o [1]
+  .rodata                 const    0x0000a680     0x4  r_ioport.o [1]
+  .rodata                 const    0x0000a684     0x4  r_ioport.o [1]
+  .rodata                 const    0x0000a688     0x4  r_sci_uart.o [1]
+  .rodata                 const    0x0000a68c     0x4  r_sci_uart.o [1]
+  .rodata                 const    0x0000a690     0x4  r_sci_uart.o [1]
+  .rodata                 const    0x0000a694     0x4  r_sci_uart.o [1]
+  .rodata                 const    0x0000a698     0x4  r_sci_uart.o [1]
+  .rodata                 const    0x0000a69c     0x4  r_sci_uart.o [1]
+  .rodata                 const    0x0000a6a0     0x4  r_sci_uart.o [1]
+  .rodata                 const    0x0000a6a4     0x4  r_sci_uart.o [1]
+  .rodata                 const    0x0000a6a8     0x4  r_sci_uart.o [1]
+  .rodata                 const    0x0000a6ac     0x4  r_sci_uart.o [1]
+  .rodata                 const    0x0000a6b0     0x4  sf_uart_comms.o [1]
+  .rodata                 const    0x0000a6b4     0x4  uart_thread0.o [1]
+  .rodata                 const    0x0000a6b8     0x4  uart_thread0.o [1]
+  .version                const    0x0000a6bc     0x4  bsp_common.o [1]
+                                 - 0x0000a6c0  0xa1a0
+
+"A2":                                           0x1c0
+  .ssp_dtc_vector_table   uninit   0x1ffe0000   0x1c0  r_dtc.o [1]
+                                 - 0x1ffe01c0   0x1c0
+
+"P4", part 1 of 2:                               0x80
+  .data                            0x1ffe01c0    0x80  <Block>
+    .data-1                        0x1ffe01c0    0x7e  <Init block>
+      .data               inited   0x1ffe01c0    0x30  cli.o [1]
+      .data               inited   0x1ffe01f0    0x20  main.o [1]
+      .data               inited   0x1ffe0210    0x10  uart_thread0.o [1]
+      .data               inited   0x1ffe0220    0x10  uart_thread0.o [1]
+      .data               inited   0x1ffe0230     0x4  tx_thread_initialize.o [4]
+      .data               inited   0x1ffe0234     0x8  rand.o [3]
+      .data               inited   0x1ffe023c     0x2  uart_thread0_entry.o [1]
+                                 - 0x1ffe0240    0x80
+
+"P4", part 2 of 2:                             0x2ce0
+  HEAP                    uninit   0x1ffe0240  0x1000  startup_S7G2.o [1]
+  .bss                             0x1ffe1240   0xc34  <Block>
+    .bss                  uninit   0x1ffe1240    0xb8  blinky_thread.o [1]
+    .bss                  uninit   0x1ffe12f8    0x30  bsp_group_irq.o [1]
+    .bss                  uninit   0x1ffe1328     0x4  bsp_irq.o [1]
+    .bss                  uninit   0x1ffe132c     0x4  bsp_locking.o [1]
+    .bss                  uninit   0x1ffe1330     0x4  bsp_locking.o [1]
+    .bss                  uninit   0x1ffe1334     0x4  bsp_locking.o [1]
+    .bss                  uninit   0x1ffe1338     0x4  bsp_qspi.o [1]
+    .bss                  uninit   0x1ffe133c     0x8  bsp_register_protection.o [1]
+    .bss                  uninit   0x1ffe1344    0x8c  cli.o [1]
+    .bss                  uninit   0x1ffe13d0     0x4  cli.o [1]
+    .bss                  uninit   0x1ffe13d4     0x4  cli.o [1]
+    .bss                  uninit   0x1ffe13d8    0x30  cli.o [1]
+    .bss                  uninit   0x1ffe1408     0x4  main.o [1]
+    .bss                  uninit   0x1ffe140c    0x1c  main.o [1]
+    .bss                  uninit   0x1ffe1428    0x8c  MenuBuilder.o [1]
+    .bss                  uninit   0x1ffe14b4    0x8c  MenuBuilder.o [1]
+    .bss                  uninit   0x1ffe1540    0x8c  MenuBuilder.o [1]
+    .bss                  uninit   0x1ffe15cc    0x8c  MenuBuilder.o [1]
+    .bss                  uninit   0x1ffe1658    0x8c  MenuBuilder.o [1]
+    .bss                  uninit   0x1ffe16e4    0x8c  MenuBuilder.o [1]
+    .bss                  uninit   0x1ffe1770    0x8c  MenuBuilder.o [1]
+    .bss                  uninit   0x1ffe17fc    0x8c  MenuBuilder.o [1]
+    .bss                  uninit   0x1ffe1888    0x8c  MenuBuilder.o [1]
+    .bss                  uninit   0x1ffe1914    0x8c  MenuBuilder.o [1]
+    .bss                  uninit   0x1ffe19a0    0x8c  MenuBuilder.o [1]
+    .bss                  uninit   0x1ffe1a2c     0x4  r_dtc.o [1]
+    .bss                  uninit   0x1ffe1a30     0x4  r_dtc.o [1]
+    .bss                  uninit   0x1ffe1a34     0x4  r_elc.o [1]
+    .bss                  uninit   0x1ffe1a38     0x4  system_S7G2.o [1]
+    .bss                  uninit   0x1ffe1a3c    0xb8  uart_thread0.o [1]
+    .bss                  uninit   0x1ffe1af4    0x10  uart_thread0.o [1]
+    .bss                  uninit   0x1ffe1b04    0x10  uart_thread0.o [1]
+    .bss                  uninit   0x1ffe1b14     0x4  uart_thread0.o [1]
+    .bss                  uninit   0x1ffe1b18     0x4  uart_thread0.o [1]
+    .bss                  uninit   0x1ffe1b1c     0x4  uart_thread0.o [1]
+    .bss                  uninit   0x1ffe1b20     0x4  uart_thread0.o [1]
+    .bss                  uninit   0x1ffe1b24    0x40  uart_thread0.o [1]
+    .bss                  uninit   0x1ffe1b64   0x12c  uart_thread0.o [1]
+    .bss                  uninit   0x1ffe1c90    0x44  uart_thread0_entry.o [1]
+    .bss                  uninit   0x1ffe1cd4     0x4  tx_thread_initialize.o [4]
+    .bss                  uninit   0x1ffe1cd8    0xa4  tx_thread_initialize.o [4]
+    .bss                  uninit   0x1ffe1d7c    0x30  tx_initialize_high_level.o [4]
+    .bss                  uninit   0x1ffe1dac     0x4  tx_initialize_high_level.o [4]
+    .bss                  uninit   0x1ffe1db0     0x8  tx_thread_schedule.o [4]
+    .bss                  uninit   0x1ffe1db8    0xac  tx_timer_initialize.o [4]
+    .bss                  uninit   0x1ffe1e64     0x4  strtok.o [3]
+    .bss                  uninit   0x1ffe1e68     0x4  xfail_s.o [3]
+    .bss                  uninit   0x1ffe1e6c     0x2  r_ioport.o [1]
+    .bss                  uninit   0x1ffe1e6e     0x1  bsp_qspi.o [1]
+    .bss                  uninit   0x1ffe1e6f     0x1  bsp_qspi.o [1]
+    .bss                  uninit   0x1ffe1e70     0x1  cli.o [1]
+    .bss                  uninit   0x1ffe1e71     0x1  main.o [1]
+    .bss                  uninit   0x1ffe1e72     0x1  r_dtc.o [1]
+    .bss                  uninit   0x1ffe1e73     0x1  uart_thread0_entry.o [1]
+  .noinit                 uninit   0x1ffe1e74     0x4  r_cgc.o [1]
+  .stack                           0x1ffe1e78   0x800  <Block>
+    .stack                uninit   0x1ffe1e78   0x800  startup_S7G2.o [1]
+  .stack.blinky_thread    uninit   0x1ffe2678   0x400  blinky_thread.o [1]
+  .stack.uart_thread0     uninit   0x1ffe2a78   0x400  uart_thread0.o [1]
+  HW_LOCK                          0x1ffe2e78    0x6c  <Block>
+    .hw_lock.ADC_0U_0U    uninit   0x1ffe2e78     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ADC_0U_1U    uninit   0x1ffe2e79     0x1  bsp_hw_locks.o [1]
+    .hw_lock.AGT_0U_0U    uninit   0x1ffe2e7a     0x1  bsp_hw_locks.o [1]
+    .hw_lock.AGT_0U_1U    uninit   0x1ffe2e7b     0x1  bsp_hw_locks.o [1]
+    .hw_lock.BSC_0U_1U    uninit   0x1ffe2e7c     0x1  bsp_hw_locks.o [1]
+    .hw_lock.CAC_0U_0U    uninit   0x1ffe2e7d     0x1  bsp_hw_locks.o [1]
+    .hw_lock.CAN_0U_0U    uninit   0x1ffe2e7e     0x1  bsp_hw_locks.o [1]
+    .hw_lock.CAN_0U_1U    uninit   0x1ffe2e7f     0x1  bsp_hw_locks.o [1]
+    .hw_lock.COMP_HS_0U_0U
+                          uninit   0x1ffe2e80     0x1  bsp_hw_locks.o [1]
+    .hw_lock.COMP_HS_0U_1U
+                          uninit   0x1ffe2e81     0x1  bsp_hw_locks.o [1]
+    .hw_lock.COMP_HS_0U_2U
+                          uninit   0x1ffe2e82     0x1  bsp_hw_locks.o [1]
+    .hw_lock.COMP_HS_0U_3U
+                          uninit   0x1ffe2e83     0x1  bsp_hw_locks.o [1]
+    .hw_lock.COMP_HS_0U_4U
+                          uninit   0x1ffe2e84     0x1  bsp_hw_locks.o [1]
+    .hw_lock.COMP_HS_0U_5U
+                          uninit   0x1ffe2e85     0x1  bsp_hw_locks.o [1]
+    .hw_lock.CRC_0U_0U    uninit   0x1ffe2e86     0x1  bsp_hw_locks.o [1]
+    .hw_lock.CTSU_0U_0U   uninit   0x1ffe2e87     0x1  bsp_hw_locks.o [1]
+    .hw_lock.DAAD_0U_0U   uninit   0x1ffe2e88     0x1  bsp_hw_locks.o [1]
+    .hw_lock.DAC_0U_0U    uninit   0x1ffe2e89     0x1  bsp_hw_locks.o [1]
+    .hw_lock.DAC_0U_1U    uninit   0x1ffe2e8a     0x1  bsp_hw_locks.o [1]
+    .hw_lock.DMAC_0U_0U   uninit   0x1ffe2e8b     0x1  bsp_hw_locks.o [1]
+    .hw_lock.DMAC_0U_1U   uninit   0x1ffe2e8c     0x1  bsp_hw_locks.o [1]
+    .hw_lock.DMAC_0U_2U   uninit   0x1ffe2e8d     0x1  bsp_hw_locks.o [1]
+    .hw_lock.DMAC_0U_3U   uninit   0x1ffe2e8e     0x1  bsp_hw_locks.o [1]
+    .hw_lock.DMAC_0U_4U   uninit   0x1ffe2e8f     0x1  bsp_hw_locks.o [1]
+    .hw_lock.DMAC_0U_5U   uninit   0x1ffe2e90     0x1  bsp_hw_locks.o [1]
+    .hw_lock.DMAC_0U_6U   uninit   0x1ffe2e91     0x1  bsp_hw_locks.o [1]
+    .hw_lock.DMAC_0U_7U   uninit   0x1ffe2e92     0x1  bsp_hw_locks.o [1]
+    .hw_lock.DOC_0U_0U    uninit   0x1ffe2e93     0x1  bsp_hw_locks.o [1]
+    .hw_lock.DRW_0U_0U    uninit   0x1ffe2e94     0x1  bsp_hw_locks.o [1]
+    .hw_lock.DTC_0U_0U    uninit   0x1ffe2e95     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ELC_0U_0U    uninit   0x1ffe2e96     0x1  bsp_hw_locks.o [1]
+    .hw_lock.EPTPC_0U_0U  uninit   0x1ffe2e97     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ETHER_0U_0U  uninit   0x1ffe2e98     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ETHER_0U_1U  uninit   0x1ffe2e99     0x1  bsp_hw_locks.o [1]
+    .hw_lock.FCU_0U_0U    uninit   0x1ffe2e9a     0x1  bsp_hw_locks.o [1]
+    .hw_lock.GLCDC_0U_0U  uninit   0x1ffe2e9b     0x1  bsp_hw_locks.o [1]
+    .hw_lock.GPT_0U_0U    uninit   0x1ffe2e9c     0x1  bsp_hw_locks.o [1]
+    .hw_lock.GPT_0U_10U   uninit   0x1ffe2e9d     0x1  bsp_hw_locks.o [1]
+    .hw_lock.GPT_0U_11U   uninit   0x1ffe2e9e     0x1  bsp_hw_locks.o [1]
+    .hw_lock.GPT_0U_12U   uninit   0x1ffe2e9f     0x1  bsp_hw_locks.o [1]
+    .hw_lock.GPT_0U_13U   uninit   0x1ffe2ea0     0x1  bsp_hw_locks.o [1]
+    .hw_lock.GPT_0U_1U    uninit   0x1ffe2ea1     0x1  bsp_hw_locks.o [1]
+    .hw_lock.GPT_0U_2U    uninit   0x1ffe2ea2     0x1  bsp_hw_locks.o [1]
+    .hw_lock.GPT_0U_3U    uninit   0x1ffe2ea3     0x1  bsp_hw_locks.o [1]
+    .hw_lock.GPT_0U_4U    uninit   0x1ffe2ea4     0x1  bsp_hw_locks.o [1]
+    .hw_lock.GPT_0U_5U    uninit   0x1ffe2ea5     0x1  bsp_hw_locks.o [1]
+    .hw_lock.GPT_0U_6U    uninit   0x1ffe2ea6     0x1  bsp_hw_locks.o [1]
+    .hw_lock.GPT_0U_7U    uninit   0x1ffe2ea7     0x1  bsp_hw_locks.o [1]
+    .hw_lock.GPT_0U_8U    uninit   0x1ffe2ea8     0x1  bsp_hw_locks.o [1]
+    .hw_lock.GPT_0U_9U    uninit   0x1ffe2ea9     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_0U    uninit   0x1ffe2eaa     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_10U   uninit   0x1ffe2eab     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_11U   uninit   0x1ffe2eac     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_12U   uninit   0x1ffe2ead     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_13U   uninit   0x1ffe2eae     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_14U   uninit   0x1ffe2eaf     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_15U   uninit   0x1ffe2eb0     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_1U    uninit   0x1ffe2eb1     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_2U    uninit   0x1ffe2eb2     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_3U    uninit   0x1ffe2eb3     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_4U    uninit   0x1ffe2eb4     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_5U    uninit   0x1ffe2eb5     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_6U    uninit   0x1ffe2eb6     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_7U    uninit   0x1ffe2eb7     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_8U    uninit   0x1ffe2eb8     0x1  bsp_hw_locks.o [1]
+    .hw_lock.ICU_0U_9U    uninit   0x1ffe2eb9     0x1  bsp_hw_locks.o [1]
+    .hw_lock.IIC_0U_0U    uninit   0x1ffe2eba     0x1  bsp_hw_locks.o [1]
+    .hw_lock.IIC_0U_1U    uninit   0x1ffe2ebb     0x1  bsp_hw_locks.o [1]
+    .hw_lock.IIC_0U_2U    uninit   0x1ffe2ebc     0x1  bsp_hw_locks.o [1]
+    .hw_lock.IRDA_0U_0U   uninit   0x1ffe2ebd     0x1  bsp_hw_locks.o [1]
+    .hw_lock.IWDT_0U_0U   uninit   0x1ffe2ebe     0x1  bsp_hw_locks.o [1]
+    .hw_lock.JPEG_0U_0U   uninit   0x1ffe2ebf     0x1  bsp_hw_locks.o [1]
+    .hw_lock.KEY_0U_0U    uninit   0x1ffe2ec0     0x1  bsp_hw_locks.o [1]
+    .hw_lock.LPM_1U_0U    uninit   0x1ffe2ec1     0x1  bsp_hw_locks.o [1]
+    .hw_lock.LVD_0U_0U    uninit   0x1ffe2ec2     0x1  bsp_hw_locks.o [1]
+    .hw_lock.LVD_0U_1U    uninit   0x1ffe2ec3     0x1  bsp_hw_locks.o [1]
+    .hw_lock.MMF_0U_0U    uninit   0x1ffe2ec4     0x1  bsp_hw_locks.o [1]
+    .hw_lock.MPU_0U_0U    uninit   0x1ffe2ec5     0x1  bsp_hw_locks.o [1]
+    .hw_lock.OPS_0U_0U    uninit   0x1ffe2ec6     0x1  bsp_hw_locks.o [1]
+    .hw_lock.PDC_0U_0U    uninit   0x1ffe2ec7     0x1  bsp_hw_locks.o [1]
+    .hw_lock.POEG_0U_0U   uninit   0x1ffe2ec8     0x1  bsp_hw_locks.o [1]
+    .hw_lock.POEG_0U_1U   uninit   0x1ffe2ec9     0x1  bsp_hw_locks.o [1]
+    .hw_lock.POEG_0U_2U   uninit   0x1ffe2eca     0x1  bsp_hw_locks.o [1]
+    .hw_lock.POEG_0U_3U   uninit   0x1ffe2ecb     0x1  bsp_hw_locks.o [1]
+    .hw_lock.QSPI_0U_0U   uninit   0x1ffe2ecc     0x1  bsp_hw_locks.o [1]
+    .hw_lock.RTC_0U_0U    uninit   0x1ffe2ecd     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SCE_0U_0U    uninit   0x1ffe2ece     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SCI_0U_0U    uninit   0x1ffe2ecf     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SCI_0U_1U    uninit   0x1ffe2ed0     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SCI_0U_2U    uninit   0x1ffe2ed1     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SCI_0U_3U    uninit   0x1ffe2ed2     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SCI_0U_4U    uninit   0x1ffe2ed3     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SCI_0U_5U    uninit   0x1ffe2ed4     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SCI_0U_6U    uninit   0x1ffe2ed5     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SCI_0U_7U    uninit   0x1ffe2ed6     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SCI_0U_8U    uninit   0x1ffe2ed7     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SCI_0U_9U    uninit   0x1ffe2ed8     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SDHIMMC_0U_0U
+                          uninit   0x1ffe2ed9     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SDHIMMC_0U_1U
+                          uninit   0x1ffe2eda     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SPI_0U_0U    uninit   0x1ffe2edb     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SPI_0U_1U    uninit   0x1ffe2edc     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SRC_0U_0U    uninit   0x1ffe2edd     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SSI_0U_0U    uninit   0x1ffe2ede     0x1  bsp_hw_locks.o [1]
+    .hw_lock.SSI_0U_1U    uninit   0x1ffe2edf     0x1  bsp_hw_locks.o [1]
+    .hw_lock.TSN_0U_0U    uninit   0x1ffe2ee0     0x1  bsp_hw_locks.o [1]
+    .hw_lock.USB_0U_0U    uninit   0x1ffe2ee1     0x1  bsp_hw_locks.o [1]
+    .hw_lock.USB_1U_0U    uninit   0x1ffe2ee2     0x1  bsp_hw_locks.o [1]
+    .hw_lock.WDT_0U_0U    uninit   0x1ffe2ee3     0x1  bsp_hw_locks.o [1]
+  .noinit                 uninit   0x1ffe2ee4    0x18  r_cgc.o [1]
+  .noinit                 uninit   0x1ffe2efc     0x4  r_cgc.o [1]
+  .noinit                 uninit   0x1ffe2f00     0x8  system_S7G2.o [1]
+  .noinit                 uninit   0x1ffe2f08     0x4  r_fmi.o [1]
+  .noinit                 uninit   0x1ffe2f0c     0x4  r_ioport.o [1]
+  .noinit                 uninit   0x1ffe2f10     0x4  r_ioport.o [1]
+  .noinit                 uninit   0x1ffe2f14     0x4  r_ioport.o [1]
+  .noinit                 uninit   0x1ffe2f18     0x4  r_ioport.o [1]
+  .noinit                 uninit   0x1ffe2f1c     0x4  r_ioport.o [1]
+                                 - 0x1ffe2f20  0x2ce0
+
+"P9":                                             0x4
+  FREE_MEM                uninit   0x1ffe2f20     0x4  tx_thread_schedule.o [4]
+                                 - 0x1ffe2f24     0x4
+
+"P10":                                           0x10
+  .id_code_1              const    0x40120050    0x10  bsp_rom_registers.o [1]
+                                 - 0x40120060    0x10
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                            ro code  ro data  rw data
+    ------                            -------  -------  -------
+C:\SPM_Project_ws2\Debug\Obj: [1]
+    MenuBuilder.o                         716      504    1 540
+    blinky_thread.o                       104       16    1 208
+    blinky_thread_entry.o                  30
+    bsp_cache.o                           116
+    bsp_clocks.o                          548
+    bsp_common.o                                    96
+    bsp_common_leds.o                      28
+    bsp_delay.o                           106
+    bsp_feature.o                          36       44
+    bsp_fmi_R7FS7G27H3A01CFC.o                   1 024
+    bsp_group_irq.o                       492                48
+    bsp_hw_locks.o                                 432      108
+    bsp_init.o                              8
+    bsp_irq.o                              92        4        4
+    bsp_leds.o                                      16
+    bsp_locking.o                         232                12
+    bsp_module_stop.o                     300       90
+    bsp_qspi.o                            996                 6
+    bsp_register_protection.o             208        8        8
+    bsp_rom_registers.o                             76
+    cli.o                               2 072      376      245
+    common_data.o                           2        8
+    hal_data.o                              8
+    main.o                                212       52       65
+    pin_data.o                                     896
+    r_cgc.o                             6 128      156       32
+    r_dtc.o                             1 736       48      457
+    r_elc.o                               332       36        4
+    r_fmi.o                             1 558      168        4
+    r_ioport.o                          1 884       77       22
+    r_sci_uart.o                        5 280      185
+    sf_uart_comms.o                     1 150       56
+    startup_S7G2.o                         16       64    6 144
+    system_S7G2.o                         446       12       12
+    uart_thread0.o                        152      248    1 652
+    uart_thread0_entry.o                  252        2       71
+    -----------------------------------------------------------
+    Total:                             25 240    4 694   11 642
+
+command line: [2]
+    -----------------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    abort.o                                 6
+    cppinit.o                              24
+    iar_Stoulx.o                          372
+    isdigit.o                              10
+    printf.o                               40
+    putchar.o                              32
+    rand.o                                 16        8        8
+    sprintf.o                              64
+    strcat.o                               32
+    strcspn.o                              34
+    strspn.o                               34
+    strtok.o                               72                 4
+    xfail_s.o                              64                 4
+    xprintfsmall_nomb.o                 1 236
+    xprout.o                               22
+    xsprout.o                              10
+    -----------------------------------------------------------
+    Total:                              2 068        8       16
+
+libtx.a: [4]
+    tx_event_flags_cleanup.o              132
+    tx_event_flags_create.o                76
+    tx_event_flags_delete.o               140
+    tx_event_flags_get.o                  204
+    tx_event_flags_set.o                  444
+    tx_initialize_high_level.o             44                52
+    tx_initialize_kernel_enter.o           68
+    tx_initialize_low_level.o             124
+    tx_isr_end.o                            2
+    tx_isr_start.o                          2
+    tx_mutex_cleanup.o                    184
+    tx_mutex_create.o                      96
+    tx_mutex_delete.o                     164
+    tx_mutex_get.o                        260
+    tx_mutex_prioritize.o                 148
+    tx_mutex_priority_change.o            176
+    tx_mutex_put.o                        446
+    tx_queue_cleanup.o                    132
+    tx_queue_create.o                     116
+    tx_queue_delete.o                     140
+    tx_queue_receive.o                    428
+    tx_queue_send.o                       280
+    tx_semaphore_cleanup.o                124
+    tx_semaphore_create.o                  80
+    tx_semaphore_get.o                    140
+    tx_semaphore_put.o                     84
+    tx_thread_create.o                    296
+    tx_thread_initialize.o                 56        4      172
+    tx_thread_schedule.o                  436                12
+    tx_thread_shell_entry.o                72
+    tx_thread_sleep.o                     100
+    tx_thread_stack_build.o                72
+    tx_thread_system_preempt_check.o       60
+    tx_thread_system_resume.o             240
+    tx_thread_system_suspend.o            256
+    tx_thread_time_slice.o                 96
+    tx_thread_timeout.o                    52
+    tx_timer_expiration_process.o         260
+    tx_timer_initialize.o                  56               172
+    tx_timer_interrupt.o                  164
+    tx_timer_system_activate.o             96
+    tx_timer_system_deactivate.o           42
+    txe_event_flags_create.o              136
+    txe_event_flags_delete.o               44
+    txe_event_flags_get.o                  68
+    txe_event_flags_set.o                  44
+    txe_mutex_create.o                    152
+    txe_mutex_delete.o                     44
+    txe_mutex_get.o                        84
+    txe_mutex_put.o                        56
+    txe_queue_create.o                    180
+    txe_queue_delete.o                     44
+    txe_queue_receive.o                    64
+    txe_queue_send.o                       64
+    txe_semaphore_create.o                140
+    txe_semaphore_get.o                    44
+    txe_semaphore_put.o                    24
+    txe_thread_create.o                   276
+    -----------------------------------------------------------
+    Total:                              8 052        4      408
+
+m7M_tls.a: [5]
+    fpinit_M.o                             34
+    -----------------------------------------------------------
+    Total:                                 34
+
+rt7M_tl.a: [6]
+    ABImemclr4.o                            6
+    ABImemcpy_unaligned.o                 118
+    ABImemset.o                           102
+    ABImemset48.o                          50
+    I64DivMod.o                           626
+    I64DivZer.o                             2
+    memchr.o                               88
+    memcmp_unaligned.o                     98
+    strchr.o                               22
+    strcmp_unaligned.o                     66
+    strcpy_unaligned.o                     68
+    strlen.o                               54
+    strncpy_unaligned.o                   108
+    -----------------------------------------------------------
+    Total:                              1 408
+
+shb_l.a: [7]
+    exit.o                                 20
+    -----------------------------------------------------------
+    Total:                                 20
+
+    Gaps                                   26        8
+    Linker created                                   2
+---------------------------------------------------------------
+    Grand Total:                       36 848    4 716   12 066
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+.bss$$Base              0x1ffe1240           --   Gb  - Linker created -
+.bss$$Length            0x00000c34           --   Gb  - Linker created -
+.bss$$Limit             0x1ffe1e74           --   Gb  - Linker created -
+.code_in_ram$$Base      0x00000000           --   Gb  - Linker created -
+.code_in_ram$$Length    0x00000000           --   Gb  - Linker created -
+.code_in_ram_init$$Base
+                        0x00000000           --   Gb  - Linker created -
+.data$$Base             0x1ffe01c0           --   Gb  - Linker created -
+.data$$Length           0x00000080           --   Gb  - Linker created -
+.data$$Limit            0x1ffe0240           --   Gb  - Linker created -
+.data_init$$Base        0x00009d60           --   Gb  - Linker created -
+.data_init$$Limit       0x00009de0           --   Gb  - Linker created -
+.stack$$Base            0x1ffe1e78           --   Gb  - Linker created -
+.stack$$Limit           0x1ffe2678           --   Gb  - Linker created -
+BSS                     0x1ffe023c     0x2  Data  Gb  uart_thread0_entry.o [1]
+Default_Handler         0x0000a4dd     0x4  Code  Gb  startup_S7G2.o [1]
+HW_CGC_BusClockOutCfg   0x0000062f    0x1c  Code  Lc  r_cgc.o [1]
+HW_CGC_BusClockOutDisable
+                        0x00000665    0x1a  Code  Lc  r_cgc.o [1]
+HW_CGC_BusClockOutEnable
+                        0x0000064b    0x1a  Code  Lc  r_cgc.o [1]
+HW_CGC_ClockSourceGet   0x000005fb     0xa  Code  Lc  r_cgc.o [1]
+HW_CGC_ClockSourceValidCheck
+                        0x000005eb    0x10  Code  Lc  r_cgc.o [1]
+HW_CGC_HardwareLock     0x000005c3     0xa  Code  Lc  r_cgc.o [1]
+HW_CGC_HardwareUnLock   0x000005cd     0xa  Code  Lc  r_cgc.o [1]
+HW_CGC_LPMHardwareLock  0x000005d7     0xa  Code  Lc  r_cgc.o [1]
+HW_CGC_LPMHardwareUnLock
+                        0x000005e1     0xa  Code  Lc  r_cgc.o [1]
+HW_CGC_OscStopDetectEnabledGet
+                        0x00000605    0x16  Code  Lc  r_cgc.o [1]
+HW_CGC_OscStopDetectGet
+                        0x0000061b    0x14  Code  Lc  r_cgc.o [1]
+HW_CGC_SDRAMClockOutDisable
+                        0x00000699    0x1a  Code  Lc  r_cgc.o [1]
+HW_CGC_SDRAMClockOutEnable
+                        0x0000067f    0x1a  Code  Lc  r_cgc.o [1]
+HW_CGC_SetHighSpeedMode
+                        0x000005a5     0xa  Code  Lc  r_cgc.o [1]
+HW_CGC_SetLowSpeedMode  0x000005af     0xa  Code  Lc  r_cgc.o [1]
+HW_CGC_SetSubOscSpeedMode
+                        0x000005b9     0xa  Code  Lc  r_cgc.o [1]
+HW_CGC_USBClockCfg      0x000006b3    0x1c  Code  Lc  r_cgc.o [1]
+HW_DTC_ICUEventGet      0x00005c21    0x12  Code  Lc  r_dtc.o [1]
+HW_DTC_ReadSkipEnableSet
+                        0x00005bb5     0xa  Code  Lc  r_dtc.o [1]
+HW_DTC_StartStop        0x00005bbf     0xa  Code  Lc  r_dtc.o [1]
+HW_DTC_StatusGet        0x00005c1d     0x4  Code  Lc  r_dtc.o [1]
+HW_DTC_VectorTableAddressSet
+                        0x00005bb1     0x4  Code  Lc  r_dtc.o [1]
+HW_ELC_Disable          0x0000921b     0xa  Code  Lc  r_elc.o [1]
+HW_ELC_Enable           0x00009211     0xa  Code  Lc  r_elc.o [1]
+HW_ELC_LinkBreak        0x0000922d     0xa  Code  Lc  r_elc.o [1]
+HW_ELC_LinkSet          0x00009225     0x8  Code  Lc  r_elc.o [1]
+HW_ELC_SoftwareEvent0Generate
+                        0x000091f5     0xe  Code  Lc  r_elc.o [1]
+HW_ELC_SoftwareEvent1Generate
+                        0x00009203     0xe  Code  Lc  r_elc.o [1]
+HW_FMI_EventGet         0x0000634d    0x8c  Code  Lc  r_fmi.o [1]
+HW_FMI_HardwareTableVersionEntryCheck
+                        0x00006337    0x16  Code  Lc  r_fmi.o [1]
+HW_FMI_IPLocate         0x00006287    0xb0  Code  Lc  r_fmi.o [1]
+HW_FMI_RecordLocate     0x00006279     0xe  Code  Lc  r_fmi.o [1]
+HW_ICU_DTCDisable       0x00005c01    0x1c  Code  Lc  r_dtc.o [1]
+HW_ICU_DTCEnable        0x00005bc9    0x38  Code  Lc  r_dtc.o [1]
+HW_IOPORT_EthernetModeCfg
+                        0x0000547b    0x28  Code  Lc  r_ioport.o [1]
+HW_IOPORT_Init_Reference_Counter
+                        0x00008a99     0x8  Code  Lc  system_S7G2.o [1]
+HW_IOPORT_PFSAccessDisable
+                        0x000055eb    0x3c  Code  Lc  r_ioport.o [1]
+HW_IOPORT_PFSAccessEnable
+                        0x000055b9    0x32  Code  Lc  r_ioport.o [1]
+HW_IOPORT_PFSRead       0x00005627     0xc  Code  Lc  r_ioport.o [1]
+HW_IOPORT_PFSWrite      0x00005633    0x32  Code  Lc  r_ioport.o [1]
+HW_IOPORT_PinDirectionSet
+                        0x00005567    0x3a  Code  Lc  r_ioport.o [1]
+HW_IOPORT_PinEventOutputDataWrite
+                        0x000054ed    0x44  Code  Lc  r_ioport.o [1]
+HW_IOPORT_PinRead       0x00005531    0x14  Code  Lc  r_ioport.o [1]
+HW_IOPORT_PortDirectionRead
+                        0x00005557    0x10  Code  Lc  r_ioport.o [1]
+HW_IOPORT_PortDirectionSet
+                        0x000055a1    0x18  Code  Lc  r_ioport.o [1]
+HW_IOPORT_PortEventInputDataRead
+                        0x000054bd    0x14  Code  Lc  r_ioport.o [1]
+HW_IOPORT_PortEventOutputDataWrite
+                        0x000054d1    0x1c  Code  Lc  r_ioport.o [1]
+HW_IOPORT_PortRead      0x00005545    0x12  Code  Lc  r_ioport.o [1]
+HW_IOPORT_PortWriteWithPCNTR3
+                        0x000054a3    0x1a  Code  Lc  r_ioport.o [1]
+HW_LOCK$$Base           0x1ffe2e78           --   Gb  - Linker created -
+HW_LOCK$$Limit          0x1ffe2ee4           --   Gb  - Linker created -
+HW_SCI_BaudClkOutputDisable
+                        0x0000266d     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_BaudClkOutputEnable
+                        0x0000264f    0x1e  Code  Lc  r_sci_uart.o [1]
+HW_SCI_BaudRateGenExternalClkDivideBy8
+                        0x000025f7     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_BaudRateGenExternalClkSelect
+                        0x000025d5     0xe  Code  Lc  r_sci_uart.o [1]
+HW_SCI_BaudRateGenInternalClkSelect
+                        0x000025cb     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_BitRateDefaultSet
+                        0x00002631    0x1e  Code  Lc  r_sci_uart.o [1]
+HW_SCI_BitRateModulationEnable
+                        0x000026c1     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_BreakDetectionCheck
+                        0x000026a9     0xe  Code  Lc  r_sci_uart.o [1]
+HW_SCI_CtsInEnable      0x000024a9     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_DRBitGet         0x0000248f     0x8  Code  Lc  r_sci_uart.o [1]
+HW_SCI_DRClear          0x00002489     0x6  Code  Lc  r_sci_uart.o [1]
+HW_SCI_DataBits7bitsSelect
+                        0x000023d9    0x12  Code  Lc  r_sci_uart.o [1]
+HW_SCI_DataBits9bitsSelect
+                        0x000023eb    0x12  Code  Lc  r_sci_uart.o [1]
+HW_SCI_ErrorConditionClear
+                        0x000026b7     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_FIFO_ReadCount   0x000024a1     0x8  Code  Lc  r_sci_uart.o [1]
+HW_SCI_FIFO_WriteCount  0x00002497     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_FifoEnable       0x0000237b     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_FramingErrorCheck
+                        0x0000269d     0xc  Code  Lc  r_sci_uart.o [1]
+HW_SCI_IsBaudRateInternalClkSelected
+                        0x000025e3    0x14  Code  Lc  r_sci_uart.o [1]
+HW_SCI_NoiseFilterSet   0x00002677    0x1a  Code  Lc  r_sci_uart.o [1]
+HW_SCI_Non_FIFO_ReadAddrGet
+                        0x0000245d     0xc  Code  Lc  r_sci_uart.o [1]
+HW_SCI_Non_FIFO_WriteAddrGet
+                        0x00002433     0xc  Code  Lc  r_sci_uart.o [1]
+HW_SCI_OverRunErrorCheck
+                        0x00002691     0xc  Code  Lc  r_sci_uart.o [1]
+HW_SCI_ParitySet        0x000023cf     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_RDFClear         0x00002483     0x6  Code  Lc  r_sci_uart.o [1]
+HW_SCI_RTSTriggerNumberSet
+                        0x000023a5     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_RXIeventSelect   0x0000238f     0xc  Code  Lc  r_sci_uart.o [1]
+HW_SCI_Read             0x00002575     0x4  Code  Lc  r_sci_uart.o [1]
+HW_SCI_Read9bits        0x00002417     0xe  Code  Lc  r_sci_uart.o [1]
+HW_SCI_ReadAddrGet      0x0000244f     0xe  Code  Lc  r_sci_uart.o [1]
+HW_SCI_ReadFIFO         0x00002469    0x10  Code  Lc  r_sci_uart.o [1]
+HW_SCI_ReceiveFifoReset
+                        0x00002385     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_ReceiverEnable   0x00002551     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_RegisterReset    0x00002579    0x52  Code  Lc  r_sci_uart.o [1]
+HW_SCI_RxIrqEnable      0x000024cb    0x2a  Code  Lc  r_sci_uart.o [1]
+HW_SCI_RxTriggerNumberSet
+                        0x0000239b     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_StartBitSet      0x000024b3     0xe  Code  Lc  r_sci_uart.o [1]
+HW_SCI_StopBitsSelect   0x000023fd     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_TDFEClear        0x00002479     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_TeIrqEnable      0x000024f5    0x34  Code  Lc  r_sci_uart.o [1]
+HW_SCI_TransmitFifoReset
+                        0x000023af    0x16  Code  Lc  r_sci_uart.o [1]
+HW_SCI_TransmitterEnable
+                        0x0000255b     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_TransmitterLevelSet
+                        0x000024c1     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_TxTriggerNumberSet
+                        0x000023c5     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_UartBitRateModulationSet
+                        0x000026cb     0x4  Code  Lc  r_sci_uart.o [1]
+HW_SCI_UartBitRateSet   0x00002601    0x30  Code  Lc  r_sci_uart.o [1]
+HW_SCI_UartReceiverEnable
+                        0x0000253d     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_UartTransmitIrqDisable
+                        0x00002533     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_UartTransmitterEnable
+                        0x00002529     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_UartTransmitterReceiverDisable
+                        0x00002547     0xa  Code  Lc  r_sci_uart.o [1]
+HW_SCI_Write            0x00002565    0x10  Code  Lc  r_sci_uart.o [1]
+HW_SCI_Write9bits       0x00002407    0x10  Code  Lc  r_sci_uart.o [1]
+HW_SCI_WriteAddrGet     0x00002425     0xe  Code  Lc  r_sci_uart.o [1]
+HW_SCI_WriteFIFO        0x0000243f    0x10  Code  Lc  r_sci_uart.o [1]
+LOCK_LOOKUP$$Base       0x00009044           --   Gb  - Linker created -
+LOCK_LOOKUP$$Length     0x000001b0           --   Gb  - Linker created -
+LOCK_LOOKUP$$Limit      0x000091f4           --   Gb  - Linker created -
+LoadInt                 0x00004ccf    0x56  Code  Lc  xprintfsmall_nomb.o [3]
+NMI_Handler             0x00002095   0x182  Code  Gb  bsp_group_irq.o [1]
+PendSV_Handler          0x00008d71    0xa6  Code  Gb  tx_thread_schedule.o [4]
+R_BSP_CacheOff          0x00002225    0x28  Code  Gb  bsp_cache.o [1]
+R_BSP_CacheSet          0x0000224d    0x44  Code  Gb  bsp_cache.o [1]
+R_BSP_FeatureCgcGet     0x00001df9     0x6  Code  Gb  bsp_feature.o [1]
+R_BSP_FeatureIoportGet  0x00001de7    0x12  Code  Gb  bsp_feature.o [1]
+R_BSP_FeatureSciGet     0x00001de1     0x6  Code  Gb  bsp_feature.o [1]
+R_BSP_GroupIrqWrite     0x00002077    0x1e  Code  Gb  bsp_group_irq.o [1]
+R_BSP_HardwareLock      0x0000380b    0x2e  Code  Gb  bsp_locking.o [1]
+R_BSP_HardwareUnlock    0x00003839    0x2c  Code  Gb  bsp_locking.o [1]
+R_BSP_IrqStatusClear    0x0000376d    0x20  Code  Gb  bsp_irq.o [1]
+R_BSP_LedsGet           0x00005099    0x1c  Code  Gb  bsp_common_leds.o [1]
+R_BSP_ModuleStart       0x000038bd     0xc  Code  Gb  bsp_module_stop.o [1]
+R_BSP_ModuleStop        0x000038b1     0xc  Code  Gb  bsp_module_stop.o [1]
+R_BSP_RegisterProtectDisable
+                        0x00001d6f    0x50  Code  Gb  bsp_register_protection.o [1]
+R_BSP_RegisterProtectEnable
+                        0x00001d11    0x5e  Code  Gb  bsp_register_protection.o [1]
+R_BSP_SoftwareDelay     0x000086b5    0x5c  Code  Gb  bsp_delay.o [1]
+R_BSP_SoftwareLock      0x000037c9     0xa  Code  Gb  bsp_locking.o [1]
+R_BSP_SoftwareUnlock    0x00003805     0x6  Code  Gb  bsp_locking.o [1]
+R_CGC_BusClockOutCfg    0x00000e53    0x14  Code  Gb  r_cgc.o [1]
+R_CGC_BusClockOutDisable
+                        0x00000e77    0x10  Code  Gb  r_cgc.o [1]
+R_CGC_BusClockOutEnable
+                        0x00000e67    0x10  Code  Gb  r_cgc.o [1]
+R_CGC_ClockCheck        0x00000c85    0x9c  Code  Gb  r_cgc.o [1]
+R_CGC_ClockOutCfg       0x00000e87    0x4e  Code  Gb  r_cgc.o [1]
+R_CGC_ClockOutDisable   0x00000ee5    0x10  Code  Gb  r_cgc.o [1]
+R_CGC_ClockOutEnable    0x00000ed5    0x10  Code  Gb  r_cgc.o [1]
+R_CGC_ClockStart        0x000008c3   0x116  Code  Gb  r_cgc.o [1]
+R_CGC_ClockStop         0x000009d9    0xce  Code  Gb  r_cgc.o [1]
+R_CGC_ClocksCfg         0x000007a5   0x11e  Code  Gb  r_cgc.o [1]
+R_CGC_Init              0x000006cf    0xd6  Code  Gb  r_cgc.o [1]
+R_CGC_LCDClockCfg       0x00000ef5     0x4  Code  Gb  r_cgc.o [1]
+R_CGC_LCDClockDisable   0x00000efd     0x4  Code  Gb  r_cgc.o [1]
+R_CGC_LCDClockEnable    0x00000ef9     0x4  Code  Gb  r_cgc.o [1]
+R_CGC_OscStopDetect     0x00000d21    0xc0  Code  Gb  r_cgc.o [1]
+R_CGC_OscStopStatusClear
+                        0x00000de1    0x72  Code  Gb  r_cgc.o [1]
+R_CGC_SDADCClockCfg     0x00000f01     0x4  Code  Gb  r_cgc.o [1]
+R_CGC_SDADCClockDisable
+                        0x00000f09     0x4  Code  Gb  r_cgc.o [1]
+R_CGC_SDADCClockEnable  0x00000f05     0x4  Code  Gb  r_cgc.o [1]
+R_CGC_SDRAMClockOutDisable
+                        0x00000f1d    0x10  Code  Gb  r_cgc.o [1]
+R_CGC_SDRAMClockOutEnable
+                        0x00000f0d    0x10  Code  Gb  r_cgc.o [1]
+R_CGC_SystemClockFreqGet
+                        0x00000c37    0x4e  Code  Gb  r_cgc.o [1]
+R_CGC_SystemClockGet    0x00000c05    0x32  Code  Gb  r_cgc.o [1]
+R_CGC_SystemClockSet    0x00000aa7   0x15e  Code  Gb  r_cgc.o [1]
+R_CGC_SystickUpdate     0x00000f41    0x52  Code  Gb  r_cgc.o [1]
+R_CGC_USBClockCfg       0x00000f2d    0x14  Code  Gb  r_cgc.o [1]
+R_CGC_VersionGet        0x00000f93    0x14  Code  Gb  r_cgc.o [1]
+R_DTC_BlockReset        0x00005f4b    0xbe  Code  Gb  r_dtc.o [1]
+R_DTC_Close             0x00005ee9    0x4e  Code  Gb  r_dtc.o [1]
+R_DTC_Disable           0x00005e11    0x2a  Code  Gb  r_dtc.o [1]
+R_DTC_Enable            0x00005dab    0x66  Code  Gb  r_dtc.o [1]
+R_DTC_InfoGet           0x00005e3b    0xae  Code  Gb  r_dtc.o [1]
+R_DTC_Open              0x00005c33    0xa4  Code  Gb  r_dtc.o [1]
+R_DTC_Reset             0x00005cd7    0xcc  Code  Gb  r_dtc.o [1]
+R_DTC_Start             0x00005da3     0x4  Code  Gb  r_dtc.o [1]
+R_DTC_Stop              0x00005da7     0x4  Code  Gb  r_dtc.o [1]
+R_DTC_VersionGet        0x00005f37    0x14  Code  Gb  r_dtc.o [1]
+R_ELC_Disable           0x00009311     0xe  Code  Gb  r_elc.o [1]
+R_ELC_Enable            0x00009303     0xe  Code  Gb  r_elc.o [1]
+R_ELC_Init              0x00009237    0x7c  Code  Gb  r_elc.o [1]
+R_ELC_LinkBreak         0x000092f1    0x12  Code  Gb  r_elc.o [1]
+R_ELC_LinkSet           0x000092db    0x16  Code  Gb  r_elc.o [1]
+R_ELC_SoftwareEventGenerate
+                        0x000092b3    0x28  Code  Gb  r_elc.o [1]
+R_ELC_VersionGet        0x0000931f    0x12  Code  Gb  r_elc.o [1]
+R_FMI_EventInfoGet      0x000064fb    0x32  Code  Lc  r_fmi.o [1]
+R_FMI_FeatureGet        0x00006485    0x76  Code  Lc  r_fmi.o [1]
+R_FMI_Init              0x000063d9    0x4a  Code  Lc  r_fmi.o [1]
+R_FMI_ProductInfoGet    0x00006423    0x2a  Code  Lc  r_fmi.o [1]
+R_FMI_TABLE             0x0000a678     0x4  Data  Lc  r_fmi.o [1]
+R_FMI_UniqueIdGet       0x0000644d    0x38  Code  Lc  r_fmi.o [1]
+R_FMI_VersionGet        0x0000652d    0x12  Code  Lc  r_fmi.o [1]
+R_IOPORT_EthernetModeCfg
+                        0x00005a79    0x50  Code  Gb  r_ioport.o [1]
+R_IOPORT_Init           0x00005665    0xa4  Code  Gb  r_ioport.o [1]
+R_IOPORT_PinCfg         0x00005761    0x4a  Code  Gb  r_ioport.o [1]
+R_IOPORT_PinDirectionSet
+                        0x000058f7    0x42  Code  Gb  r_ioport.o [1]
+R_IOPORT_PinEventInputRead
+                        0x00005969    0x54  Code  Gb  r_ioport.o [1]
+R_IOPORT_PinEventOutputWrite
+                        0x000059ff    0x68  Code  Gb  r_ioport.o [1]
+R_IOPORT_PinRead        0x000057ab    0x32  Code  Gb  r_ioport.o [1]
+R_IOPORT_PinWrite       0x00005853    0x52  Code  Gb  r_ioport.o [1]
+R_IOPORT_PinsCfg        0x00005709    0x58  Code  Gb  r_ioport.o [1]
+R_IOPORT_PortDirectionSet
+                        0x000058a5    0x52  Code  Gb  r_ioport.o [1]
+R_IOPORT_PortEventInputRead
+                        0x00005939    0x30  Code  Gb  r_ioport.o [1]
+R_IOPORT_PortEventOutputWrite
+                        0x000059bd    0x42  Code  Gb  r_ioport.o [1]
+R_IOPORT_PortRead       0x000057dd    0x32  Code  Gb  r_ioport.o [1]
+R_IOPORT_PortWrite      0x0000580f    0x44  Code  Gb  r_ioport.o [1]
+R_IOPORT_VersionGet     0x00005a67    0x12  Code  Gb  r_ioport.o [1]
+R_SCI_UartAbort         0x00002b8d    0x56  Code  Gb  r_sci_uart.o [1]
+R_SCI_UartBaudSet       0x00002a3b    0xa2  Code  Gb  r_sci_uart.o [1]
+R_SCI_UartClose         0x00002871    0x94  Code  Gb  r_sci_uart.o [1]
+R_SCI_UartInfoGet       0x00002add    0x9c  Code  Gb  r_sci_uart.o [1]
+R_SCI_UartOpen          0x000026cf   0x1a2  Code  Gb  r_sci_uart.o [1]
+R_SCI_UartRead          0x00002905    0x8c  Code  Gb  r_sci_uart.o [1]
+R_SCI_UartVersionGet    0x00002b79    0x14  Code  Gb  r_sci_uart.o [1]
+R_SCI_UartWrite         0x00002991    0xaa  Code  Gb  r_sci_uart.o [1]
+R_SSP_CurrentIrqGet     0x00002357    0x14  Code  Lc  r_sci_uart.o [1]
+R_SSP_VectorInfoGet     0x0000236b    0x10  Code  Lc  r_sci_uart.o [1]
+Reset_Handler           0x0000a4d1     0xc  Code  Gb  startup_S7G2.o [1]
+RxMessage               0x1ffe1c90    0x44  Data  Gb  uart_thread0_entry.o [1]
+SCI_UART_100_PERCENT_X_1000
+                        0x0000a690     0x4  Data  Lc  r_sci_uart.o [1]
+SCI_UART_DEFAULT_BAUD_RATE_ERROR_X_1000
+                        0x0000a698     0x4  Data  Lc  r_sci_uart.o [1]
+SCI_UART_MDDR_DIVISOR   0x0000a694     0x4  Data  Lc  r_sci_uart.o [1]
+SF_UART_COMMS_Close     0x0000695f    0x28  Code  Gb  sf_uart_comms.o [1]
+SF_UART_COMMS_Lock      0x00006a7f    0x64  Code  Gb  sf_uart_comms.o [1]
+SF_UART_COMMS_Open      0x000068f5    0x6a  Code  Gb  sf_uart_comms.o [1]
+SF_UART_COMMS_Read      0x00006987    0x54  Code  Gb  sf_uart_comms.o [1]
+SF_UART_COMMS_Unlock    0x00006ae3    0x54  Code  Gb  sf_uart_comms.o [1]
+SF_UART_COMMS_VersionGet
+                        0x00006b37     0xa  Code  Gb  sf_uart_comms.o [1]
+SF_UART_COMMS_Write     0x000069db    0xa4  Code  Gb  sf_uart_comms.o [1]
+SHT$$INIT_ARRAY$$Limit  0x00000000           --   Gb  - Linker created -
+SHT$$PREINIT_ARRAY$$Base
+                        0x00000000           --   Gb  - Linker created -
+SysTick_Config          0x00000571    0x34  Code  Lc  r_cgc.o [1]
+SysTick_Handler         0x00008e17     0x4  Code  Gb  tx_thread_schedule.o [4]
+SystemCoreClock         0x1ffe1a38     0x4  Data  Gb  system_S7G2.o [1]
+SystemCoreClockUpdate   0x00008aa1     0xc  Code  Gb  system_S7G2.o [1]
+SystemInit              0x00008aad    0xb2  Code  Gb  system_S7G2.o [1]
+VECT_INFO$$Base         0x00000500          Data  Gb  - Linker created -
+VECT_INFO$$Length       0x00000020           --   Gb  - Linker created -
+VECT_INFO$$Limit        0x00000520           --   Gb  - Linker created -
+_LitobSmallNoMb         0x00004e61    0xce  Code  Lc  xprintfsmall_nomb.o [3]
+_PrintfSmallNoMb        0x00004aad   0x216  Code  Gb  xprintfsmall_nomb.o [3]
+_Prout                  0x0000a3f5    0x16  Code  Gb  xprout.o [3]
+_PutcharsSmallNoMb      0x00004f2f    0x2e  Code  Lc  xprintfsmall_nomb.o [3]
+_PutfldSmallNoMb        0x00004d25   0x13c  Code  Lc  xprintfsmall_nomb.o [3]
+_Randinit               0x1ffe0234     0x1  Data  Gb  rand.o [3]
+_Randseed               0x1ffe0238     0x4  Data  Gb  rand.o [3]
+_SProut                 0x00001e0b     0xa  Code  Gb  xsprout.o [3]
+_Strtok_ssave           0x1ffe1e64     0x4  Data  Lc  strtok.o [3]
+__DLIB_PERTHREAD$$Base  0x00000000           --   Gb  - Linker created -
+__DLIB_PERTHREAD_init$$Base
+                        0x00000000           --   Gb  - Linker created -
+__DLIB_PERTHREAD_init$$Length
+                        0x00000000           --   Gb  - Linker created -
+__NVIC_ClearPendingIRQ  0x00002311    0x1e  Code  Lc  r_sci_uart.o [1]
+__NVIC_DisableIRQ       0x000022eb    0x26  Code  Lc  r_sci_uart.o [1]
+__NVIC_EnableIRQ        0x000022cd    0x1e  Code  Lc  r_sci_uart.o [1]
+__NVIC_GetPriority      0x00000549    0x28  Code  Lc  r_cgc.o [1]
+__NVIC_SetPriority      0x00000521    0x28  Code  Lc  r_cgc.o [1]
+__NVIC_SetPriority      0x0000232f    0x28  Code  Lc  r_sci_uart.o [1]
+__Vectors               0x00000000    0x40  Data  Gb  startup_S7G2.o [1]
+__aeabi_ldiv0           0x00003ccd          Code  Gb  I64DivZer.o [6]
+__aeabi_ldivmod         0x00003a55          Code  Gb  I64DivMod.o [6]
+__aeabi_memclr4         0x00001e05          Code  Gb  ABImemclr4.o [6]
+__aeabi_memset          0x00004fe5          Code  Gb  ABImemset.o [6]
+__aeabi_uldivmod        0x00003a99          Code  Gb  I64DivMod.o [6]
+__call_ctors            0x00008c59    0x18  Code  Gb  cppinit.o [3]
+__exit                  0x00005441    0x14  Code  Gb  exit.o [7]
+__iar_Fail_s            0x00005241    0x1c  Code  Gb  xfail_s.o [3]
+__iar_Memchr            0x00005281          Code  Gb  memchr.o [6]
+__iar_Memset            0x00004fe5          Code  Gb  ABImemset.o [6]
+__iar_Memset4_word      0x00002299          Code  Gb  ABImemset48.o [6]
+__iar_Memset8_word      0x00002299          Code  Gb  ABImemset48.o [6]
+__iar_Memset_word       0x00004fed          Code  Gb  ABImemset.o [6]
+__iar_Stoulx            0x000050b5   0x114  Code  Gb  iar_Stoulx.o [3]
+__iar_Strchr            0x00005229          Code  Gb  strchr.o [6]
+__iar_init_vfp          0x0000a1cd          Code  Gb  fpinit_M.o [5]
+__iar_systems$$module {Abs}
+                        0x00000001          Data  Gb  command line/config [2]
+__iar_unaligned_memcmp  0x00006891          Code  Gb  memcmp_unaligned.o [6]
+__iar_unaligned_memcpy  0x000039dd          Code  Gb  ABImemcpy_unaligned.o [6]
+__iar_unaligned_memcpy4
+                        0x000039fd          Code  Gb  ABImemcpy_unaligned.o [6]
+__iar_unaligned_memcpy8
+                        0x000039fd          Code  Gb  ABImemcpy_unaligned.o [6]
+__iar_unaligned_strcmp  0x00004625          Code  Gb  strcmp_unaligned.o [6]
+__iar_unaligned_strcpy  0x00004669          Code  Gb  strcpy_unaligned.o [6]
+__iar_unaligned_strncpy
+                        0x000046cd          Code  Gb  strncpy_unaligned.o [6]
+__qspi_region_end_address__ {Abs}
+                        0x63ffffff          Data  Gb  command line/config [2]
+__qspi_region_max_size__ {Abs}
+                        0x04000000          Data  Gb  command line/config [2]
+__qspi_region_start_address__ {Abs}
+                        0x60000000          Data  Gb  command line/config [2]
+__tx_free_memory_start  0x1ffe2f20     0x4  Data  Gb  tx_thread_schedule.o [4]
+__write                 0x00004547    0x2c  Code  Gb  uart_thread0_entry.o [1]
+_tx_block_pool_created_count
+                        0x1ffe1da0     0x4  Data  Gb  tx_initialize_high_level.o [4]
+_tx_block_pool_created_ptr
+                        0x1ffe1d9c     0x4  Data  Gb  tx_initialize_high_level.o [4]
+_tx_build_options       0x1ffe1cf4     0x4  Data  Gb  tx_thread_initialize.o [4]
+_tx_byte_pool_created_count
+                        0x1ffe1da8     0x4  Data  Gb  tx_initialize_high_level.o [4]
+_tx_byte_pool_created_ptr
+                        0x1ffe1da4     0x4  Data  Gb  tx_initialize_high_level.o [4]
+_tx_event_flags_cleanup
+                        0x00009bd9    0x84  Code  Gb  tx_event_flags_cleanup.o [4]
+_tx_event_flags_create  0x00007721    0x4c  Code  Gb  tx_event_flags_create.o [4]
+_tx_event_flags_created_count
+                        0x1ffe1d90     0x4  Data  Gb  tx_initialize_high_level.o [4]
+_tx_event_flags_created_ptr
+                        0x1ffe1d8c     0x4  Data  Gb  tx_initialize_high_level.o [4]
+_tx_event_flags_delete  0x00007885    0x8c  Code  Gb  tx_event_flags_delete.o [4]
+_tx_event_flags_get     0x0000740d    0xcc  Code  Gb  tx_event_flags_get.o [4]
+_tx_event_flags_set     0x00007ab5   0x1bc  Code  Gb  tx_event_flags_set.o [4]
+_tx_initialize_high_level
+                        0x00009a85    0x2c  Code  Gb  tx_initialize_high_level.o [4]
+_tx_initialize_kernel_enter
+                        0x00009871    0x44  Code  Gb  tx_initialize_kernel_enter.o [4]
+_tx_initialize_low_level
+                        0x00009a09    0x7c  Code  Gb  tx_initialize_low_level.o [4]
+_tx_initialize_unused_memory
+                        0x1ffe1dac     0x4  Data  Gb  tx_initialize_high_level.o [4]
+_tx_mutex_cleanup       0x00009b21    0x6e  Code  Gb  tx_mutex_cleanup.o [4]
+_tx_mutex_create        0x000076c1    0x60  Code  Gb  tx_mutex_create.o [4]
+_tx_mutex_created_count
+                        0x1ffe1d98     0x4  Data  Gb  tx_initialize_high_level.o [4]
+_tx_mutex_created_ptr   0x1ffe1d94     0x4  Data  Gb  tx_initialize_high_level.o [4]
+_tx_mutex_delete        0x000077e1    0xa4  Code  Gb  tx_mutex_delete.o [4]
+_tx_mutex_get           0x00007149   0x104  Code  Gb  tx_mutex_get.o [4]
+_tx_mutex_prioritize    0x00007d21    0x94  Code  Gb  tx_mutex_prioritize.o [4]
+_tx_mutex_priority_change
+                        0x00007c71    0xb0  Code  Gb  tx_mutex_priority_change.o [4]
+_tx_mutex_put           0x0000724d   0x1b0  Code  Gb  tx_mutex_put.o [4]
+_tx_mutex_thread_release
+                        0x00009b8f    0x3e  Code  Gb  tx_mutex_cleanup.o [4]
+_tx_port_wait_thread_ready
+                        0x00008ccb    0x78  Code  Gb  tx_thread_schedule.o [4]
+_tx_queue_cleanup       0x00009c5d    0x84  Code  Gb  tx_queue_cleanup.o [4]
+_tx_queue_create        0x0000776d    0x74  Code  Gb  tx_queue_create.o [4]
+_tx_queue_created_count
+                        0x1ffe1d88     0x4  Data  Gb  tx_initialize_high_level.o [4]
+_tx_queue_created_ptr   0x1ffe1d84     0x4  Data  Gb  tx_initialize_high_level.o [4]
+_tx_queue_delete        0x00007911    0x8c  Code  Gb  tx_queue_delete.o [4]
+_tx_queue_receive       0x000074d9   0x1ac  Code  Gb  tx_queue_receive.o [4]
+_tx_queue_send          0x0000799d   0x118  Code  Gb  tx_queue_send.o [4]
+_tx_semaphore_cleanup   0x00009de1    0x7c  Code  Gb  tx_semaphore_cleanup.o [4]
+_tx_semaphore_create    0x000098b5    0x50  Code  Gb  tx_semaphore_create.o [4]
+_tx_semaphore_created_count
+                        0x1ffe1d80     0x4  Data  Gb  tx_initialize_high_level.o [4]
+_tx_semaphore_created_ptr
+                        0x1ffe1d7c     0x4  Data  Gb  tx_initialize_high_level.o [4]
+_tx_semaphore_get       0x00009925    0x8c  Code  Gb  tx_semaphore_get.o [4]
+_tx_semaphore_put       0x000099b5    0x54  Code  Gb  tx_semaphore_put.o [4]
+_tx_thread_create       0x00009341   0x128  Code  Gb  tx_thread_create.o [4]
+_tx_thread_created_count
+                        0x1ffe1ce4     0x4  Data  Gb  tx_thread_initialize.o [4]
+_tx_thread_created_ptr  0x1ffe1ce0     0x4  Data  Gb  tx_thread_initialize.o [4]
+_tx_thread_current_ptr  0x1ffe1cd8     0x4  Data  Gb  tx_thread_initialize.o [4]
+_tx_thread_execute_ptr  0x1ffe1cdc     0x4  Data  Gb  tx_thread_initialize.o [4]
+_tx_thread_highest_priority
+                        0x1ffe1ce8     0x4  Data  Gb  tx_thread_initialize.o [4]
+_tx_thread_initialize   0x00009ab1    0x34  Code  Gb  tx_thread_initialize.o [4]
+_tx_thread_mutex_release
+                        0x1ffe1cf0     0x4  Data  Gb  tx_thread_initialize.o [4]
+_tx_thread_preempt_disable
+                        0x1ffe1cec     0x4  Data  Gb  tx_thread_initialize.o [4]
+_tx_thread_priority_list
+                        0x1ffe1cfc    0x80  Data  Gb  tx_thread_initialize.o [4]
+_tx_thread_priority_maps
+                        0x1ffe1cf8     0x4  Data  Gb  tx_thread_initialize.o [4]
+_tx_thread_schedule     0x00008c89    0x42  Code  Gb  tx_thread_schedule.o [4]
+_tx_thread_shell_entry  0x00009fb5    0x48  Code  Gb  tx_thread_shell_entry.o [4]
+_tx_thread_sleep        0x00004f81    0x64  Code  Gb  tx_thread_sleep.o [4]
+_tx_thread_stack_build  0x00009469    0x48  Code  Gb  tx_thread_stack_build.o [4]
+_tx_thread_system_preempt_check
+                        0x00007685    0x3c  Code  Gb  tx_thread_system_preempt_check.o [4]
+_tx_thread_system_resume
+                        0x00007dcf    0xba  Code  Gb  tx_thread_system_resume.o [4]
+_tx_thread_system_return_inline
+                        0x000052d9    0x1a  Code  Lc  tx_thread_system_suspend.o [4]
+_tx_thread_system_return_inline
+                        0x00007db5    0x1a  Code  Lc  tx_thread_system_resume.o [4]
+_tx_thread_system_stack_ptr
+                        0x1ffe1cd4     0x4  Data  Gb  tx_thread_initialize.o [4]
+_tx_thread_system_state
+                        0x1ffe0230     0x4  Data  Gb  tx_thread_initialize.o [4]
+_tx_thread_system_suspend
+                        0x000052f3    0xc6  Code  Gb  tx_thread_system_suspend.o [4]
+_tx_thread_time_slice   0x00008fe5    0x60  Code  Gb  tx_thread_time_slice.o [4]
+_tx_thread_timeout      0x0000a0ad    0x34  Code  Gb  tx_thread_timeout.o [4]
+_tx_timer_created_count
+                        0x1ffe1dd4     0x4  Data  Gb  tx_timer_initialize.o [4]
+_tx_timer_created_ptr   0x1ffe1dd0     0x4  Data  Gb  tx_timer_initialize.o [4]
+_tx_timer_current_ptr   0x1ffe1dc8     0x4  Data  Gb  tx_timer_initialize.o [4]
+_tx_timer_expiration_process
+                        0x00008ee1   0x104  Code  Gb  tx_timer_expiration_process.o [4]
+_tx_timer_expired       0x1ffe1dcc     0x4  Data  Gb  tx_timer_initialize.o [4]
+_tx_timer_expired_time_slice
+                        0x1ffe1dbc     0x4  Data  Gb  tx_timer_initialize.o [4]
+_tx_timer_expired_timer_ptr
+                        0x1ffe1dd8     0x4  Data  Gb  tx_timer_initialize.o [4]
+_tx_timer_initialize    0x00009ae9    0x38  Code  Gb  tx_timer_initialize.o [4]
+_tx_timer_interrupt     0x00008e3d    0xa4  Code  Gb  tx_timer_interrupt.o [4]
+_tx_timer_list          0x1ffe1de4    0x80  Data  Gb  tx_timer_initialize.o [4]
+_tx_timer_list_end      0x1ffe1dc4     0x4  Data  Gb  tx_timer_initialize.o [4]
+_tx_timer_list_start    0x1ffe1dc0     0x4  Data  Gb  tx_timer_initialize.o [4]
+_tx_timer_processing_active
+                        0x1ffe1ddc     0x4  Data  Gb  tx_timer_initialize.o [4]
+_tx_timer_system_activate
+                        0x000053e1    0x60  Code  Gb  tx_timer_system_activate.o [4]
+_tx_timer_system_clock  0x1ffe1db8     0x4  Data  Gb  tx_timer_initialize.o [4]
+_tx_timer_system_deactivate
+                        0x00007ea5    0x2a  Code  Gb  tx_timer_system_deactivate.o [4]
+_tx_timer_time_slice    0x1ffe1de0     0x4  Data  Gb  tx_timer_initialize.o [4]
+_txe_event_flags_create
+                        0x00006f1d    0x88  Code  Gb  txe_event_flags_create.o [4]
+_txe_event_flags_delete
+                        0x00007085    0x2c  Code  Gb  txe_event_flags_delete.o [4]
+_txe_event_flags_get    0x00006e01    0x44  Code  Gb  txe_event_flags_get.o [4]
+_txe_event_flags_set    0x0000711d    0x2c  Code  Gb  txe_event_flags_set.o [4]
+_txe_mutex_create       0x00006e85    0x98  Code  Gb  txe_mutex_create.o [4]
+_txe_mutex_delete       0x00007059    0x2c  Code  Gb  txe_mutex_delete.o [4]
+_txe_mutex_get          0x00006d75    0x54  Code  Gb  txe_mutex_get.o [4]
+_txe_mutex_put          0x00006dc9    0x38  Code  Gb  txe_mutex_put.o [4]
+_txe_queue_create       0x00006fa5    0xb4  Code  Gb  txe_queue_create.o [4]
+_txe_queue_delete       0x000070b1    0x2c  Code  Gb  txe_queue_delete.o [4]
+_txe_queue_receive      0x00006e45    0x40  Code  Gb  txe_queue_receive.o [4]
+_txe_queue_send         0x000070dd    0x40  Code  Gb  txe_queue_send.o [4]
+_txe_semaphore_create   0x00009699    0x8c  Code  Gb  txe_semaphore_create.o [4]
+_txe_semaphore_get      0x00009825    0x2c  Code  Gb  txe_semaphore_get.o [4]
+_txe_semaphore_put      0x00009859    0x18  Code  Gb  txe_semaphore_put.o [4]
+_txe_thread_create      0x000094b1    0xfc  Code  Gb  txe_thread_create.o [4]
+abort                   0x000053d9     0x6  Code  Gb  abort.o [3]
+async_baud              0x00009f1c    0x50  Data  Lc  r_sci_uart.o [1]
+atoi                    0x000051cf     0x2  Code  Gb  iar_Stoulx.o [3]
+bit_count               0x00009ce0    0x80  Data  Lc  r_fmi.o [1]
+bit_count_mask          0x0000a624     0x8  Data  Lc  r_fmi.o [1]
+blinky_thread           0x1ffe1240    0xb8  Data  Gb  blinky_thread.o [1]
+blinky_thread_create    0x00009725    0x4a  Code  Gb  blinky_thread.o [1]
+blinky_thread_entry     0x00009905    0x1e  Code  Gb  blinky_thread_entry.o [1]
+blinky_thread_func      0x00009781     0xc  Code  Lc  blinky_thread.o [1]
+blinky_thread_stack     0x1ffe2678   0x400  Data  Lc  blinky_thread.o [1]
+bsp_clock_init          0x00001e15    0xd8  Code  Gb  bsp_clocks.o [1]
+bsp_clock_set_callback  0x00001f77    0x20  Code  Gb  bsp_clocks.o [1]
+bsp_clock_set_postchange
+                        0x00001fe3    0x30  Code  Lc  bsp_clocks.o [1]
+bsp_clock_set_prechange
+                        0x00001f97    0x4c  Code  Lc  bsp_clocks.o [1]
+bsp_clocks_hsram_wait_set
+                        0x00001f5d    0x1a  Code  Lc  bsp_clocks.o [1]
+bsp_clocks_rom_wait_get
+                        0x00001f0f     0xa  Code  Lc  bsp_clocks.o [1]
+bsp_clocks_rom_wait_set
+                        0x00001f01     0xe  Code  Lc  bsp_clocks.o [1]
+bsp_clocks_sram_wait_set
+                        0x00001f19    0x44  Code  Lc  bsp_clocks.o [1]
+bsp_cpu_clock_get       0x00001eed    0x14  Code  Gb  bsp_clocks.o [1]
+bsp_group_interrupt_open
+                        0x00002039    0x14  Code  Gb  bsp_group_irq.o [1]
+bsp_group_irq_call      0x0000204d    0x2a  Code  Gb  bsp_group_irq.o [1]
+bsp_init                0x00008c71     0x8  Code  Gb  bsp_init.o [1]
+bsp_init_hardware_locks
+                        0x00003865    0x32  Code  Gb  bsp_locking.o [1]
+bsp_init_prng           0x00008b85    0x48  Code  Lc  system_S7G2.o [1]
+bsp_irq_cfg             0x0000378d    0x2c  Code  Gb  bsp_irq.o [1]
+bsp_qspi_device_reset   0x000082d1    0x4a  Code  Lc  bsp_qspi.o [1]
+bsp_qspi_init           0x000083d3   0x26e  Code  Gb  bsp_qspi.o [1]
+bsp_qspi_status_get     0x00008653    0x26  Code  Gb  bsp_qspi.o [1]
+bsp_qspi_xip_enter      0x00008641    0x12  Code  Gb  bsp_qspi.o [1]
+bsp_qspi_xip_mode       0x0000831b    0xb8  Code  Lc  bsp_qspi.o [1]
+bsp_register_protect_open
+                        0x00001dbf    0x14  Code  Gb  bsp_register_protection.o [1]
+bsp_section_copy        0x00008b6d    0x18  Code  Lc  system_S7G2.o [1]
+bsp_section_zero        0x00008b5f     0xe  Code  Lc  system_S7G2.o [1]
+bsp_seed                0x1ffe2f00     0x8  Data  Lc  system_S7G2.o [1]
+bsp_vbatt_init          0x00005b0d    0x6e  Code  Lc  r_ioport.o [1]
+check_built_in_cmds     0x0000424d    0x60  Code  Lc  cli.o [1]
+clearBuffer             0x00004615    0x10  Code  Lc  uart_thread0_entry.o [1]
+cli_adc_dir             0x1ffe14b4    0x8c  Data  Lc  MenuBuilder.o [1]
+cli_alarms              0x00004863     0xa  Code  Lc  MenuBuilder.o [1]
+cli_alarms_cmd          0x1ffe1770    0x8c  Data  Lc  MenuBuilder.o [1]
+cli_bind_entry          0x00003e35    0xc8  Code  Lc  cli.o [1]
+cli_can_dir             0x1ffe1658    0x8c  Data  Lc  MenuBuilder.o [1]
+cli_dac_dir             0x1ffe1540    0x8c  Data  Lc  MenuBuilder.o [1]
+cli_engine              0x000042ad   0x130  Code  Gb  cli.o [1]
+cli_fan_dir             0x1ffe15cc    0x8c  Data  Lc  MenuBuilder.o [1]
+cli_find_cmd            0x000040f7   0x156  Code  Lc  cli.o [1]
+cli_gpio_dir            0x1ffe1428    0x8c  Data  Lc  MenuBuilder.o [1]
+cli_init                0x00004409    0x74  Code  Gb  cli.o [1]
+cli_led1                0x00004877    0xa6  Code  Lc  MenuBuilder.o [1]
+cli_led1_cmd            0x1ffe1888    0x8c  Data  Lc  MenuBuilder.o [1]
+cli_led2                0x0000491d     0x2  Code  Lc  MenuBuilder.o [1]
+cli_led2_cmd            0x1ffe1914    0x8c  Data  Lc  MenuBuilder.o [1]
+cli_led3                0x0000491f     0x2  Code  Lc  MenuBuilder.o [1]
+cli_led3_cmd            0x1ffe19a0    0x8c  Data  Lc  MenuBuilder.o [1]
+cli_mkcmd               0x00003efd    0x30  Code  Gb  cli.o [1]
+cli_mkdir               0x00003f2d    0x26  Code  Gb  cli.o [1]
+cli_power_dir           0x1ffe16e4    0x8c  Data  Lc  MenuBuilder.o [1]
+cli_prompt              0x1ffe13d8    0x30  Data  Gb  cli.o [1]
+cli_root_element        0x1ffe1344    0x8c  Data  Gb  cli.o [1]
+cli_set_prompt          0x000043e1    0x1a  Code  Gb  cli.o [1]
+cli_sysname             0x0000486d     0xa  Code  Lc  MenuBuilder.o [1]
+cli_sysname_cmd         0x1ffe17fc    0x8c  Data  Lc  MenuBuilder.o [1]
+current_directory       0x1ffe13d0     0x4  Data  Gb  cli.o [1]
+device_characteristics  0x1ffe1338     0x4  Data  Lc  bsp_qspi.o [1]
+device_prompt           0x1ffe01c0    0x30  Data  Gb  cli.o [1]
+digits                  0x000051d8    0x28  Data  Lc  iar_Stoulx.o [3]
+dtc_irq_lookup          0x00006009    0x32  Code  Lc  r_dtc.o [1]
+flag_status1            0x1ffe1e6e     0x1  Data  Lc  bsp_qspi.o [1]
+flag_status2            0x1ffe1e6f     0x1  Data  Lc  bsp_qspi.o [1]
+fmi_feature_info_get    0x0000675b   0x134  Code  Lc  r_fmi.o [1]
+fmi_multichannel_feature_info_get
+                        0x00006671    0xea  Code  Lc  r_fmi.o [1]
+fmi_part_number_validate
+                        0x0000653f    0x24  Code  Lc  r_fmi.o [1]
+fmi_size_lookup         0x000065b3    0x6e  Code  Lc  r_fmi.o [1]
+fmi_table_validate      0x00006589    0x2a  Code  Lc  r_fmi.o [1]
+fmi_unit_locate         0x00006621    0x50  Code  Lc  r_fmi.o [1]
+g_bsp_group_irq_sources
+                        0x1ffe12f8    0x30  Data  Lc  bsp_group_irq.o [1]
+g_bsp_id_codes          0x40120050    0x10  Data  Lc  bsp_rom_registers.o [1]
+g_bsp_leds              0x0000a554     0x8  Data  Gb  bsp_leds.o [1]
+g_bsp_lock_lookup_size  0x1ffe1334     0x4  Data  Lc  bsp_locking.o [1]
+g_bsp_module_stop       0x00009f6c    0x48  Data  Lc  bsp_module_stop.o [1]
+g_bsp_pin_cfg           0x0000a5f4     0x8  Data  Gb  pin_data.o [1]
+g_bsp_pin_cfg_data      0x00008720   0x378  Data  Gb  pin_data.o [1]
+g_bsp_prv_leds          0x0000a54c     0x8  Data  Lc  bsp_leds.o [1]
+g_bsp_rom_registers     0x00000400    0x3c  Data  Lc  bsp_rom_registers.o [1]
+g_cgc_feature           0x0000a0e0    0x2c  Data  Lc  bsp_feature.o [1]
+g_cgc_on_cgc            0x00009e5c    0x6c  Data  Gb  r_cgc.o [1]
+g_cgc_version           0x0000a660     0x4  Data  Lc  r_cgc.o [1]
+g_clock_freq            0x1ffe2ee4    0x18  Data  Lc  r_cgc.o [1]
+g_common_init           0x000099b1     0x2  Code  Gb  common_data.o [1]
+g_dtc_state_initialized
+                        0x1ffe1e72     0x1  Data  Lc  r_dtc.o [1]
+g_dtc_version           0x0000a668     0x4  Data  Lc  r_dtc.o [1]
+g_elc_cfg               0x0000a504     0xc  Data  Lc  system_S7G2.o [1]
+g_elc_on_elc            0x0000a284    0x1c  Data  Gb  r_elc.o [1]
+g_fmi_data              0x00007ed0   0x400  Data  Gb  bsp_fmi_R7FS7G27H3A01CFC.o [1]
+g_fmi_initialized       0x1ffe2f08     0x4  Data  Lc  r_fmi.o [1]
+g_fmi_on_fmi            0x0000a3c4    0x18  Data  Gb  r_fmi.o [1]
+g_fmi_version           0x0000a67c     0x4  Data  Lc  r_fmi.o [1]
+g_hal_init              0x00009851     0x8  Code  Gb  hal_data.o [1]
+g_heap                  0x1ffe0240  0x1000  Data  Lc  startup_S7G2.o [1]
+g_hw_lock_ADC_0U_0U     0x1ffe2e78     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ADC_0U_1U     0x1ffe2e79     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_AGT_0U_0U     0x1ffe2e7a     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_AGT_0U_1U     0x1ffe2e7b     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_BSC_0U_1U     0x1ffe2e7c     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_CAC_0U_0U     0x1ffe2e7d     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_CAN_0U_0U     0x1ffe2e7e     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_CAN_0U_1U     0x1ffe2e7f     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_COMP_HS_0U_0U
+                        0x1ffe2e80     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_COMP_HS_0U_1U
+                        0x1ffe2e81     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_COMP_HS_0U_2U
+                        0x1ffe2e82     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_COMP_HS_0U_3U
+                        0x1ffe2e83     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_COMP_HS_0U_4U
+                        0x1ffe2e84     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_COMP_HS_0U_5U
+                        0x1ffe2e85     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_CRC_0U_0U     0x1ffe2e86     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_CTSU_0U_0U    0x1ffe2e87     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_DAAD_0U_0U    0x1ffe2e88     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_DAC_0U_0U     0x1ffe2e89     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_DAC_0U_1U     0x1ffe2e8a     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_DMAC_0U_0U    0x1ffe2e8b     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_DMAC_0U_1U    0x1ffe2e8c     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_DMAC_0U_2U    0x1ffe2e8d     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_DMAC_0U_3U    0x1ffe2e8e     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_DMAC_0U_4U    0x1ffe2e8f     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_DMAC_0U_5U    0x1ffe2e90     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_DMAC_0U_6U    0x1ffe2e91     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_DMAC_0U_7U    0x1ffe2e92     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_DOC_0U_0U     0x1ffe2e93     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_DRW_0U_0U     0x1ffe2e94     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_DTC_0U_0U     0x1ffe2e95     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ELC_0U_0U     0x1ffe2e96     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_EPTPC_0U_0U   0x1ffe2e97     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ETHER_0U_0U   0x1ffe2e98     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ETHER_0U_1U   0x1ffe2e99     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_FCU_0U_0U     0x1ffe2e9a     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_GLCDC_0U_0U   0x1ffe2e9b     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_GPT_0U_0U     0x1ffe2e9c     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_GPT_0U_10U    0x1ffe2e9d     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_GPT_0U_11U    0x1ffe2e9e     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_GPT_0U_12U    0x1ffe2e9f     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_GPT_0U_13U    0x1ffe2ea0     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_GPT_0U_1U     0x1ffe2ea1     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_GPT_0U_2U     0x1ffe2ea2     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_GPT_0U_3U     0x1ffe2ea3     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_GPT_0U_4U     0x1ffe2ea4     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_GPT_0U_5U     0x1ffe2ea5     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_GPT_0U_6U     0x1ffe2ea6     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_GPT_0U_7U     0x1ffe2ea7     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_GPT_0U_8U     0x1ffe2ea8     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_GPT_0U_9U     0x1ffe2ea9     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_0U     0x1ffe2eaa     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_10U    0x1ffe2eab     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_11U    0x1ffe2eac     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_12U    0x1ffe2ead     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_13U    0x1ffe2eae     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_14U    0x1ffe2eaf     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_15U    0x1ffe2eb0     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_1U     0x1ffe2eb1     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_2U     0x1ffe2eb2     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_3U     0x1ffe2eb3     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_4U     0x1ffe2eb4     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_5U     0x1ffe2eb5     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_6U     0x1ffe2eb6     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_7U     0x1ffe2eb7     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_8U     0x1ffe2eb8     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_ICU_0U_9U     0x1ffe2eb9     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_IIC_0U_0U     0x1ffe2eba     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_IIC_0U_1U     0x1ffe2ebb     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_IIC_0U_2U     0x1ffe2ebc     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_IRDA_0U_0U    0x1ffe2ebd     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_IWDT_0U_0U    0x1ffe2ebe     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_JPEG_0U_0U    0x1ffe2ebf     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_KEY_0U_0U     0x1ffe2ec0     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_LPM_1U_0U     0x1ffe2ec1     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_LVD_0U_0U     0x1ffe2ec2     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_LVD_0U_1U     0x1ffe2ec3     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_MMF_0U_0U     0x1ffe2ec4     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_MPU_0U_0U     0x1ffe2ec5     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_OPS_0U_0U     0x1ffe2ec6     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_PDC_0U_0U     0x1ffe2ec7     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_POEG_0U_0U    0x1ffe2ec8     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_POEG_0U_1U    0x1ffe2ec9     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_POEG_0U_2U    0x1ffe2eca     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_POEG_0U_3U    0x1ffe2ecb     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_QSPI_0U_0U    0x1ffe2ecc     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_RTC_0U_0U     0x1ffe2ecd     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SCE_0U_0U     0x1ffe2ece     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SCI_0U_0U     0x1ffe2ecf     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SCI_0U_1U     0x1ffe2ed0     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SCI_0U_2U     0x1ffe2ed1     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SCI_0U_3U     0x1ffe2ed2     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SCI_0U_4U     0x1ffe2ed3     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SCI_0U_5U     0x1ffe2ed4     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SCI_0U_6U     0x1ffe2ed5     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SCI_0U_7U     0x1ffe2ed6     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SCI_0U_8U     0x1ffe2ed7     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SCI_0U_9U     0x1ffe2ed8     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SDHIMMC_0U_0U
+                        0x1ffe2ed9     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SDHIMMC_0U_1U
+                        0x1ffe2eda     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SPI_0U_0U     0x1ffe2edb     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SPI_0U_1U     0x1ffe2edc     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SRC_0U_0U     0x1ffe2edd     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SSI_0U_0U     0x1ffe2ede     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_SSI_0U_1U     0x1ffe2edf     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_TSN_0U_0U     0x1ffe2ee0     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_USB_0U_0U     0x1ffe2ee1     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_USB_1U_0U     0x1ffe2ee2     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_hw_lock_WDT_0U_0U     0x1ffe2ee3     0x1  Data  Gb  bsp_hw_locks.o [1]
+g_ioport                0x0000a5b4     0x8  Data  Gb  common_data.o [1]
+g_ioport_num_ports      0x1ffe2f1c     0x4  Data  Lc  r_ioport.o [1]
+g_ioport_on_ioport      0x0000a038    0x3c  Data  Gb  r_ioport.o [1]
+g_ioport_version        0x0000a680     0x4  Data  Lc  r_ioport.o [1]
+g_lock_lookup_ADC_0U_0U
+                        0x00009044     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ADC_0U_1U
+                        0x00009048     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_AGT_0U_0U
+                        0x0000904c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_AGT_0U_1U
+                        0x00009050     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_BSC_0U_1U
+                        0x00009054     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_CAC_0U_0U
+                        0x00009058     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_CAN_0U_0U
+                        0x0000905c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_CAN_0U_1U
+                        0x00009060     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_COMP_HS_0U_0U
+                        0x00009064     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_COMP_HS_0U_1U
+                        0x00009068     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_COMP_HS_0U_2U
+                        0x0000906c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_COMP_HS_0U_3U
+                        0x00009070     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_COMP_HS_0U_4U
+                        0x00009074     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_COMP_HS_0U_5U
+                        0x00009078     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_CRC_0U_0U
+                        0x0000907c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_CTSU_0U_0U
+                        0x00009080     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_DAAD_0U_0U
+                        0x00009084     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_DAC_0U_0U
+                        0x00009088     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_DAC_0U_1U
+                        0x0000908c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_DMAC_0U_0U
+                        0x00009090     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_DMAC_0U_1U
+                        0x00009094     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_DMAC_0U_2U
+                        0x00009098     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_DMAC_0U_3U
+                        0x0000909c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_DMAC_0U_4U
+                        0x000090a0     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_DMAC_0U_5U
+                        0x000090a4     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_DMAC_0U_6U
+                        0x000090a8     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_DMAC_0U_7U
+                        0x000090ac     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_DOC_0U_0U
+                        0x000090b0     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_DRW_0U_0U
+                        0x000090b4     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_DTC_0U_0U
+                        0x000090b8     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ELC_0U_0U
+                        0x000090bc     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_EPTPC_0U_0U
+                        0x000090c0     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ETHER_0U_0U
+                        0x000090c4     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ETHER_0U_1U
+                        0x000090c8     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_FCU_0U_0U
+                        0x000090cc     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_GLCDC_0U_0U
+                        0x000090d0     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_GPT_0U_0U
+                        0x000090d4     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_GPT_0U_10U
+                        0x000090d8     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_GPT_0U_11U
+                        0x000090dc     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_GPT_0U_12U
+                        0x000090e0     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_GPT_0U_13U
+                        0x000090e4     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_GPT_0U_1U
+                        0x000090e8     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_GPT_0U_2U
+                        0x000090ec     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_GPT_0U_3U
+                        0x000090f0     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_GPT_0U_4U
+                        0x000090f4     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_GPT_0U_5U
+                        0x000090f8     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_GPT_0U_6U
+                        0x000090fc     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_GPT_0U_7U
+                        0x00009100     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_GPT_0U_8U
+                        0x00009104     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_GPT_0U_9U
+                        0x00009108     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_0U
+                        0x0000910c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_10U
+                        0x00009110     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_11U
+                        0x00009114     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_12U
+                        0x00009118     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_13U
+                        0x0000911c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_14U
+                        0x00009120     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_15U
+                        0x00009124     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_1U
+                        0x00009128     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_2U
+                        0x0000912c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_3U
+                        0x00009130     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_4U
+                        0x00009134     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_5U
+                        0x00009138     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_6U
+                        0x0000913c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_7U
+                        0x00009140     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_8U
+                        0x00009144     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_ICU_0U_9U
+                        0x00009148     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_IIC_0U_0U
+                        0x0000914c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_IIC_0U_1U
+                        0x00009150     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_IIC_0U_2U
+                        0x00009154     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_IRDA_0U_0U
+                        0x00009158     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_IWDT_0U_0U
+                        0x0000915c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_JPEG_0U_0U
+                        0x00009160     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_KEY_0U_0U
+                        0x00009164     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_LPM_1U_0U
+                        0x00009168     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_LVD_0U_0U
+                        0x0000916c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_LVD_0U_1U
+                        0x00009170     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_MMF_0U_0U
+                        0x00009174     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_MPU_0U_0U
+                        0x00009178     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_OPS_0U_0U
+                        0x0000917c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_PDC_0U_0U
+                        0x00009180     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_POEG_0U_0U
+                        0x00009184     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_POEG_0U_1U
+                        0x00009188     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_POEG_0U_2U
+                        0x0000918c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_POEG_0U_3U
+                        0x00009190     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_QSPI_0U_0U
+                        0x00009194     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_RTC_0U_0U
+                        0x00009198     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SCE_0U_0U
+                        0x0000919c     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SCI_0U_0U
+                        0x000091a0     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SCI_0U_1U
+                        0x000091a4     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SCI_0U_2U
+                        0x000091a8     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SCI_0U_3U
+                        0x000091ac     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SCI_0U_4U
+                        0x000091b0     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SCI_0U_5U
+                        0x000091b4     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SCI_0U_6U
+                        0x000091b8     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SCI_0U_7U
+                        0x000091bc     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SCI_0U_8U
+                        0x000091c0     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SCI_0U_9U
+                        0x000091c4     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SDHIMMC_0U_0U
+                        0x000091c8     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SDHIMMC_0U_1U
+                        0x000091cc     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SPI_0U_0U
+                        0x000091d0     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SPI_0U_1U
+                        0x000091d4     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SRC_0U_0U
+                        0x000091d8     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SSI_0U_0U
+                        0x000091dc     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_SSI_0U_1U
+                        0x000091e0     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_TSN_0U_0U
+                        0x000091e4     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_USB_0U_0U
+                        0x000091e8     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_USB_1U_0U
+                        0x000091ec     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_lock_lookup_WDT_0U_0U
+                        0x000091f0     0x4  Data  Gb  bsp_hw_locks.o [1]
+g_main_stack            0x1ffe1e78   0x800  Data  Lc  startup_S7G2.o [1]
+g_pendsv_data           0x00008e1c    0x20  Data  Lc  tx_thread_schedule.o [4]
+g_pllccr2_div_setting   0x0000a614     0x8  Data  Lc  r_cgc.o [1]
+g_pllccr2_div_value     0x0000a60c     0x8  Data  Lc  r_cgc.o [1]
+g_pllccr_div_setting    0x0000a604     0x8  Data  Lc  r_cgc.o [1]
+g_pllccr_div_value      0x0000a5fc     0x8  Data  Lc  r_cgc.o [1]
+g_prcr                  0x1ffe1db4     0x4  Data  Lc  tx_thread_schedule.o [4]
+g_prcr_masks            0x0000a55c     0x8  Data  Lc  bsp_register_protection.o [1]
+g_protect_counters      0x1ffe133c     0x8  Data  Lc  bsp_register_protection.o [1]
+g_protect_pfswe_counter
+                        0x1ffe1e6c     0x2  Data  Gb  r_ioport.o [1]
+g_sbycr_ssby            0x1ffe1db0     0x4  Data  Lc  tx_thread_schedule.o [4]
+g_sci_uart_fifo_depth   0x0000a69c     0x4  Data  Lc  r_sci_uart.o [1]
+g_sf_comms0             0x0000a540     0xc  Data  Gb  uart_thread0.o [1]
+g_sf_comms0_cfg         0x0000a6b8     0x4  Data  Lc  uart_thread0.o [1]
+g_sf_comms0_cfg_extend  0x0000a6b4     0x4  Data  Lc  uart_thread0.o [1]
+g_sf_comms0_ctrl        0x1ffe1b64   0x12c  Data  Lc  uart_thread0.o [1]
+g_sf_comms0_err_callback_internal
+                        0x0000978d     0x4  Code  Gb  uart_thread0.o [1]
+g_sf_comms_on_sf_uart_comms
+                        0x0000a2a0    0x1c  Data  Gb  sf_uart_comms.o [1]
+g_ssp_common_initialized
+                        0x1ffe1e71     0x1  Data  Gb  main.o [1]
+g_ssp_common_initialized_semaphore
+                        0x1ffe140c    0x1c  Data  Gb  main.o [1]
+g_ssp_common_thread_count
+                        0x1ffe1408     0x4  Data  Gb  main.o [1]
+g_ssp_version           0x0000a6bc     0x4  Data  Lc  bsp_common.o [1]
+g_ssp_version_build_string
+                        0x00009ec8    0x54  Data  Lc  bsp_common.o [1]
+g_ssp_version_string    0x0000a654     0x8  Data  Lc  bsp_common.o [1]
+g_transfer0             0x0000a528     0xc  Data  Gb  uart_thread0.o [1]
+g_transfer0_cfg         0x0000a45c    0x14  Data  Gb  uart_thread0.o [1]
+g_transfer0_ctrl        0x1ffe1b04    0x10  Data  Gb  uart_thread0.o [1]
+g_transfer0_info        0x1ffe0220    0x10  Data  Gb  uart_thread0.o [1]
+g_transfer1             0x0000a51c     0xc  Data  Gb  uart_thread0.o [1]
+g_transfer1_cfg         0x0000a448    0x14  Data  Gb  uart_thread0.o [1]
+g_transfer1_ctrl        0x1ffe1af4    0x10  Data  Gb  uart_thread0.o [1]
+g_transfer1_info        0x1ffe0210    0x10  Data  Gb  uart_thread0.o [1]
+g_transfer_on_dtc       0x0000a15c    0x28  Data  Gb  r_dtc.o [1]
+g_uart0                 0x0000a534     0xc  Data  Gb  uart_thread0.o [1]
+g_uart0_cfg             0x0000a1a8    0x24  Data  Gb  uart_thread0.o [1]
+g_uart0_cfg_extend      0x0000a3dc    0x18  Data  Gb  uart_thread0.o [1]
+g_uart0_ctrl            0x1ffe1b24    0x40  Data  Gb  uart_thread0.o [1]
+g_uart_on_sci           0x0000a1f0    0x20  Data  Gb  r_sci_uart.o [1]
+g_vbatt_pins_input      0x0000a62c     0x8  Data  Lc  r_ioport.o [1]
+g_vector_SCI_0_ERI      0x00000040     0x4  Data  Gb  uart_thread0.o [1]
+g_vector_SCI_0_RXI      0x00000044     0x4  Data  Gb  uart_thread0.o [1]
+g_vector_SCI_0_TEI      0x00000048     0x4  Data  Gb  uart_thread0.o [1]
+g_vector_SCI_0_TXI      0x0000004c     0x4  Data  Gb  uart_thread0.o [1]
+g_vector_info_SCI_0_ERI
+                        0x00000500     0x8  Data  Gb  uart_thread0.o [1]
+g_vector_info_SCI_0_RXI
+                        0x00000508     0x8  Data  Gb  uart_thread0.o [1]
+g_vector_info_SCI_0_TEI
+                        0x00000510     0x8  Data  Gb  uart_thread0.o [1]
+g_vector_info_SCI_0_TXI
+                        0x00000518     0x8  Data  Gb  uart_thread0.o [1]
+g_vector_information_size
+                        0x1ffe1328     0x4  Data  Gb  bsp_irq.o [1]
+gp_bsp_lock_lookup      0x1ffe1330     0x4  Data  Lc  bsp_locking.o [1]
+gp_bsp_locks            0x1ffe132c     0x4  Data  Lc  bsp_locking.o [1]
+gp_cgc_feature          0x1ffe1e74     0x4  Data  Gb  r_cgc.o [1]
+gp_ctrl_SCI_0_ERI       0x1ffe1b20     0x4  Data  Lc  uart_thread0.o [1]
+gp_ctrl_SCI_0_RXI       0x1ffe1b14     0x4  Data  Lc  uart_thread0.o [1]
+gp_ctrl_SCI_0_TEI       0x1ffe1b1c     0x4  Data  Lc  uart_thread0.o [1]
+gp_ctrl_SCI_0_TXI       0x1ffe1b18     0x4  Data  Lc  uart_thread0.o [1]
+gp_dtc_regs             0x1ffe1a2c     0x4  Data  Lc  r_dtc.o [1]
+gp_dtc_vector_table     0x1ffe0000   0x1c0  Data  Lc  r_dtc.o [1]
+gp_elc_reg              0x1ffe1a34     0x4  Data  Lc  r_elc.o [1]
+gp_icu_regs             0x1ffe1a30     0x4  Data  Lc  r_dtc.o [1]
+gp_ioport_exists        0x1ffe2f18     0x4  Data  Lc  r_ioport.o [1]
+gp_ioport_reg           0x1ffe2f0c     0x4  Data  Lc  r_ioport.o [1]
+gp_mstp                 0x0000a480    0x10  Data  Lc  bsp_module_stop.o [1]
+gp_pfs_reg              0x1ffe2f10     0x4  Data  Lc  r_ioport.o [1]
+gp_pmisc_reg            0x1ffe2f14     0x4  Data  Lc  r_ioport.o [1]
+gp_system_reg           0x1ffe2efc     0x4  Data  Lc  r_cgc.o [1]
+gp_vector_information   0x0000a65c     0x4  Data  Gb  bsp_irq.o [1]
+ioport_pfs_address_get  0x00005461    0x1a  Code  Lc  r_ioport.o [1]
+ioport_port_address_get
+                        0x00005455     0xc  Code  Lc  r_ioport.o [1]
+is_number               0x000047e1    0x82  Code  Lc  MenuBuilder.o [1]
+isdigit                 0x0000508f     0xa  Code  Gb  isdigit.o [3]
+list                    0x1ffe13d4     0x4  Data  Lc  cli.o [1]
+list_directory          0x00003f69   0x18e  Code  Lc  cli.o [1]
+main                    0x00009661    0x24  Code  Gb  main.o [1]
+memchr                  0x00005281          Code  Gb  memchr.o [6]
+menu_build              0x00004921    0xca  Code  Gb  MenuBuilder.o [1]
+menu_help               0x00003cd1    0x48  Code  Lc  cli.o [1]
+module_version          0x0000a6a0     0x4  Data  Lc  r_sci_uart.o [1]
+module_version          0x0000a6b0     0x4  Data  Lc  sf_uart_comms.o [1]
+myChar                  0x1ffe1e73     0x1  Data  Gb  uart_thread0_entry.o [1]
+ndigs                   0x00005200    0x28  Data  Lc  iar_Stoulx.o [3]
+printThis               0x00004529    0x1e  Code  Gb  uart_thread0_entry.o [1]
+printf                  0x00004771    0x28  Code  Gb  printf.o [3]
+putchar                 0x0000a211    0x20  Code  Gb  putchar.o [3]
+r_bsp_get_mstp_mask     0x00003951    0x7a  Code  Lc  bsp_module_stop.o [1]
+r_bsp_module_start_stop
+                        0x000038c9    0x88  Code  Lc  bsp_module_stop.o [1]
+r_bsp_software_lock_cm4
+                        0x000037d3    0x32  Code  Lc  bsp_locking.o [1]
+r_cgc_adjust_subosc_speed_mode
+                        0x00001291    0x18  Code  Lc  r_cgc.o [1]
+r_cgc_apply_start_stop_options
+                        0x000012b1    0x48  Code  Lc  r_cgc.o [1]
+r_cgc_check_config_dividers
+                        0x00001193    0x58  Code  Lc  r_cgc.o [1]
+r_cgc_check_dividers    0x00001149    0x4a  Code  Lc  r_cgc.o [1]
+r_cgc_check_peripheral_clocks
+                        0x00001055    0x32  Code  Lc  r_cgc.o [1]
+r_cgc_clock_check       0x000015af    0x50  Code  Lc  r_cgc.o [1]
+r_cgc_clock_divider_get
+                        0x000018e9    0x58  Code  Lc  r_cgc.o [1]
+r_cgc_clock_hzget       0x00001941    0x20  Code  Lc  r_cgc.o [1]
+r_cgc_clock_run_state_get
+                        0x00001b19    0x88  Code  Gb  r_cgc.o [1]
+r_cgc_clock_running_status_check
+                        0x00001245    0x48  Code  Lc  r_cgc.o [1]
+r_cgc_clock_source_set  0x00001665    0x1c  Code  Lc  r_cgc.o [1]
+r_cgc_clock_start       0x000014b7    0x7c  Code  Lc  r_cgc.o [1]
+r_cgc_clock_start_stop  0x00000fe9    0x6c  Code  Lc  r_cgc.o [1]
+r_cgc_clock_stop        0x00001533    0x7c  Code  Lc  r_cgc.o [1]
+r_cgc_clock_wait_set    0x00001649    0x1c  Code  Lc  r_cgc.o [1]
+r_cgc_clockcfg_valid_check
+                        0x00001883    0x66  Code  Lc  r_cgc.o [1]
+r_cgc_clockhz_calculate
+                        0x00001961     0xc  Code  Lc  r_cgc.o [1]
+r_cgc_clockout_cfg      0x000019e9    0x36  Code  Lc  r_cgc.o [1]
+r_cgc_clockout_disable  0x00001a39    0x1a  Code  Lc  r_cgc.o [1]
+r_cgc_clockout_enable   0x00001a1f    0x1a  Code  Lc  r_cgc.o [1]
+r_cgc_delay_cycles      0x000015ff    0x2e  Code  Lc  r_cgc.o [1]
+r_cgc_hoco_wait_control_set
+                        0x00001cf5    0x1c  Code  Gb  r_cgc.o [1]
+r_cgc_hw_init           0x00001377    0x44  Code  Lc  r_cgc.o [1]
+r_cgc_init_pllfreq      0x000013bd    0x82  Code  Lc  r_cgc.o [1]
+r_cgc_low_speed_mode_possible
+                        0x000010c9    0x1a  Code  Lc  r_cgc.o [1]
+r_cgc_main_clock_drive_set
+                        0x0000143f    0x36  Code  Lc  r_cgc.o [1]
+r_cgc_mainosc_source_set
+                        0x0000162d    0x1c  Code  Lc  r_cgc.o [1]
+r_cgc_operating_hw_modeset
+                        0x00001bbf   0x136  Code  Gb  r_cgc.o [1]
+r_cgc_operating_mode_get
+                        0x00001ba1    0x1e  Code  Gb  r_cgc.o [1]
+r_cgc_operating_mode_set
+                        0x000010e9    0x42  Code  Lc  r_cgc.o [1]
+r_cgc_oscstop_detect_disable
+                        0x00001997    0x26  Code  Lc  r_cgc.o [1]
+r_cgc_oscstop_detect_enable
+                        0x00001971    0x26  Code  Lc  r_cgc.o [1]
+r_cgc_oscstop_status_clear
+                        0x000019bd    0x2c  Code  Lc  r_cgc.o [1]
+r_cgc_pll_clocksource_get
+                        0x00001681    0x24  Code  Lc  r_cgc.o [1]
+r_cgc_pll_clocksource_set
+                        0x000016a9    0x2a  Code  Lc  r_cgc.o [1]
+r_cgc_pll_divider_get   0x000017ff    0x40  Code  Lc  r_cgc.o [1]
+r_cgc_pll_divider_set   0x000017a1    0x5e  Code  Lc  r_cgc.o [1]
+r_cgc_pll_multiplier_get
+                        0x00001745    0x56  Code  Lc  r_cgc.o [1]
+r_cgc_pll_multiplier_set
+                        0x000016d3    0x6e  Code  Lc  r_cgc.o [1]
+r_cgc_prepare_pll_clock
+                        0x000012f9    0x7e  Code  Lc  r_cgc.o [1]
+r_cgc_stabilization_wait
+                        0x00000fa7    0x42  Code  Lc  r_cgc.o [1]
+r_cgc_subclock_drive_set
+                        0x00001475    0x42  Code  Lc  r_cgc.o [1]
+r_cgc_subosc_mode_possible
+                        0x00001087    0x42  Code  Lc  r_cgc.o [1]
+r_cgc_system_dividers_get
+                        0x0000183f    0x44  Code  Lc  r_cgc.o [1]
+r_cgc_system_dividers_set
+                        0x00001ac1    0x58  Code  Lc  r_cgc.o [1]
+r_cgc_systick_update    0x00001a53    0x48  Code  Lc  r_cgc.o [1]
+r_cgc_wait_to_complete  0x000011eb    0x50  Code  Lc  r_cgc.o [1]
+r_dtc_block_reset_parameter_check
+                        0x000061c5    0x4a  Code  Lc  r_dtc.o [1]
+r_dtc_enable_alignment_check
+                        0x00006231    0x48  Code  Lc  r_dtc.o [1]
+r_dtc_initialize_repeat_block_mode
+                        0x0000603b    0x30  Code  Lc  r_dtc.o [1]
+r_dtc_parameter_check   0x00006135    0x2e  Code  Lc  r_dtc.o [1]
+r_dtc_reset_parameter_check
+                        0x00006163    0x62  Code  Lc  r_dtc.o [1]
+r_dtc_state_initialize  0x0000606b    0xca  Code  Lc  r_dtc.o [1]
+r_ioport_pin_exists     0x00005ac9    0x30  Code  Lc  r_ioport.o [1]
+r_ioport_port_exists    0x00005af9    0x14  Code  Lc  r_ioport.o [1]
+r_sci_irq_cfg           0x00002f17    0x5e  Code  Lc  r_sci_uart.o [1]
+r_sci_irqs_cfg          0x00002f8d    0x66  Code  Lc  r_sci_uart.o [1]
+r_sci_read_write_param_check
+                        0x00002c05    0x48  Code  Lc  r_sci_uart.o [1]
+r_sci_uart_abort_rx     0x00003503    0x38  Code  Lc  r_sci_uart.o [1]
+r_sci_uart_abort_tx     0x00003495    0x6e  Code  Lc  r_sci_uart.o [1]
+r_sci_uart_baud_calculate
+                        0x00003125    0x94  Code  Lc  r_sci_uart.o [1]
+r_sci_uart_baud_set     0x000031b9    0x6a  Code  Lc  r_sci_uart.o [1]
+r_sci_uart_brr_mddr_calculate
+                        0x0000302d    0xf8  Code  Lc  r_sci_uart.o [1]
+r_sci_uart_config_set   0x00002e4b    0x66  Code  Lc  r_sci_uart.o [1]
+r_sci_uart_fifo_cfg     0x00002eb1    0x66  Code  Lc  r_sci_uart.o [1]
+r_sci_uart_open_param_check
+                        0x00002be3    0x22  Code  Lc  r_sci_uart.o [1]
+r_sci_uart_read_data    0x00003357    0x30  Code  Gb  r_sci_uart.o [1]
+r_sci_uart_rs485_de_pin_cfg
+                        0x00002e19    0x32  Code  Lc  r_sci_uart.o [1]
+r_sci_uart_rxi_read_no_transfer
+                        0x00003387    0x72  Code  Gb  r_sci_uart.o [1]
+r_sci_uart_rxi_read_no_transfer_eventset
+                        0x000033f9    0x9c  Code  Gb  r_sci_uart.o [1]
+r_sci_uart_transfer_close
+                        0x00002ff3    0x3a  Code  Lc  r_sci_uart.o [1]
+r_sci_uart_transfer_configure
+                        0x00002c4d    0xb4  Code  Lc  r_sci_uart.o [1]
+r_sci_uart_transfer_open
+                        0x00002d01   0x118  Code  Lc  r_sci_uart.o [1]
+r_sci_uart_write_no_transfer
+                        0x000032f5    0x62  Code  Gb  r_sci_uart.o [1]
+r_sci_uart_write_transfer_setup
+                        0x00003223    0x82  Code  Lc  r_sci_uart.o [1]
+s_elc_version           0x0000a670     0x4  Data  Lc  r_elc.o [1]
+sci_uart_eri_isr        0x000036bf    0xae  Code  Gb  r_sci_uart.o [1]
+sci_uart_rxi_isr        0x000035e1    0x6e  Code  Gb  r_sci_uart.o [1]
+sci_uart_tei_isr        0x0000364f    0x70  Code  Gb  r_sci_uart.o [1]
+sci_uart_txi_isr        0x0000353b    0xa6  Code  Gb  r_sci_uart.o [1]
+sec_hand                0x1ffe1e68     0x4  Data  Lc  xfail_s.o [3]
+sf_comms_init0          0x00009791    0x24  Code  Gb  uart_thread0.o [1]
+sf_uart_comms_callback  0x00006d1d    0x56  Code  Lc  sf_uart_comms.o [1]
+sf_uart_comms_check_events
+                        0x00006baf    0x84  Code  Lc  sf_uart_comms.o [1]
+sf_uart_comms_check_events_sub
+                        0x00006c33    0x2e  Code  Lc  sf_uart_comms.o [1]
+sf_uart_comms_receive_chars
+                        0x00006b41    0x6e  Code  Lc  sf_uart_comms.o [1]
+sf_uart_comms_tx_resource_release
+                        0x00006ced    0x2e  Code  Lc  sf_uart_comms.o [1]
+sf_uart_comms_tx_resource_setup
+                        0x00006c61    0x7e  Code  Lc  sf_uart_comms.o [1]
+software_delay_loop     0x00008715     0xa  Code  Lc  bsp_delay.o [1]
+sprintf                 0x000044e9    0x40  Code  Gb  sprintf.o [3]
+srand                   0x00008c79     0xa  Code  Gb  rand.o [3]
+str_exact               0x00003e0d    0x28  Code  Lc  cli.o [1]
+strcat                  0x000046ad    0x20  Code  Gb  strcat.o [3]
+strchr                  0x00005229          Code  Gb  strchr.o [6]
+strcspn                 0x0000506d    0x22  Code  Gb  strcspn.o [3]
+strlen                  0x00004739          Code  Gb  strlen.o [6]
+strspn                  0x0000504b    0x22  Code  Gb  strspn.o [3]
+strtok                  0x00004799    0x48  Code  Gb  strtok.o [3]
+sys_name                0x1ffe01f0    0x20  Data  Gb  main.o [1]
+tx_application_define   0x000095c7    0x38  Code  Gb  main.o [1]
+tx_application_define_internal
+                        0x000095c5     0x2  Code  Gb  main.o [1]
+tx_isr_end              0x00003cc9     0x2  Code  Gb  tx_isr_end.o [4]
+tx_isr_start            0x00003cc7     0x2  Code  Gb  tx_isr_start.o [4]
+tx_startup_common_init  0x00009605    0x5c  Code  Gb  main.o [1]
+tx_startup_err_callback
+                        0x00009601     0x4  Code  Wk  main.o [1]
+tx_startup_err_callback_internal
+                        0x00009601     0x4  Code  Gb  main.o [1]
+uart_thread0            0x1ffe1a3c    0xb8  Data  Gb  uart_thread0.o [1]
+uart_thread0_create     0x000097b5    0x4a  Code  Gb  uart_thread0.o [1]
+uart_thread0_entry      0x00004573    0x92  Code  Gb  uart_thread0_entry.o [1]
+uart_thread0_func       0x00009815    0x10  Code  Lc  uart_thread0.o [1]
+uart_thread0_stack      0x1ffe2a78   0x400  Data  Lc  uart_thread0.o [1]
+update_prompt           0x00003d19    0xf4  Code  Gb  cli.o [1]
+uprio                   0x1ffe1e70     0x1  Data  Gb  cli.o [1]
+
+
+[1] = C:\SPM_Project_ws2\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = libtx.a
+[5] = m7M_tls.a
+[6] = rt7M_tl.a
+[7] = shb_l.a
+
+  36 848 bytes of readonly  code memory
+   4 716 bytes of readonly  data memory
+  12 066 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
