@@ -23,6 +23,7 @@
 #include "cli.h"
 #include "menu_builder.h"
 #include "blinky_thread.h"
+#include "spm_fsm.h"
    
 #define NUM	6
 /*
@@ -82,6 +83,8 @@ static cli_record_t cli_alarms_cmd;
 static cli_record_t cli_sysname_cmd;
 static cli_record_t cli_version_cmd;
 static cli_record_t cli_reboot_cmd;
+static cli_record_t cli_show_dir;
+static cli_record_t cli_state_cmd;
 static cli_record_t cli_led1_cmd;
 static cli_record_t cli_led2_cmd;
 static cli_record_t cli_led3_cmd;
@@ -263,7 +266,34 @@ static void
 cli_led3 (uint32_t argc, char *argv[]){
 }                
 
-
+static void
+cli_state (uint32_t argc, char *argv[]){
+  char thisStr[64];
+  spm_fsm_state_e sysState = spm_fsm_get_cur_state();
+  sprintf(thisStr, "\r\nCurrent state is ");
+  switch (sysState){
+  case SPM_FSM_STATE_RESET:
+    strcat (thisStr, "SPM_FSM_STATE_RESET \r\n");
+    break;
+  case SPM_FSM_STATE_POST:
+    strcat (thisStr, "SPM_FSM_STATE_POST \r\n");
+    break;
+  case SPM_FSM_STATE_SELFTEST:
+    strcat (thisStr, "SPM_FSM_STATE_SELFTEST \r\n");
+    break;
+  case SPM_FSM_STATE_IDLE:
+    strcat (thisStr, "SPM_FSM_STATE_IDLE \r\n");
+    break;
+  case SPM_FSM_STATE_COUNT:
+    strcat (thisStr, "SPM_FSM_STATE_COUNT \r\n");
+    break;
+  default:
+    strcat (thisStr, "SPM_FSM_STATE_UNKNOWN \r\n");
+    break;
+  }
+  printThis(thisStr);
+  return;
+}
 
 char menu_build (void) {
 #ifdef CLI_ROOT_DIRS
@@ -278,6 +308,10 @@ char menu_build (void) {
     rc = cli_mkdir("power", "Command to manage subsystem power", mon, NULL, &cli_power_dir);
     rc = cli_mkcmd("sysname", "Display system name", mon, &cli_sysname, NULL, &cli_sysname_cmd);
     rc = cli_mkcmd("alarms", "Display oustansding alarms", mon, &cli_alarms, NULL, &cli_alarms_cmd);
+    rc = cli_mkdir("show", "Show intended state", mon, NULL, &cli_show_dir);
+    
+    /*  Show Sub Commands */
+    rc = cli_mkcmd("state", "Show state machine current state", mon, &cli_state, &cli_show_dir, &cli_state_cmd);
     /*  GPIO Sub Commands */
     rc = cli_mkcmd("led1", "Manage LED1 (ON, OFF)", mon, &cli_led1, &cli_gpio_dir, &cli_led1_cmd);
     rc = cli_mkcmd("led2", "Manage LED2 (ON, OFF)", mon, &cli_led2, &cli_gpio_dir, &cli_led2_cmd);

@@ -38,7 +38,7 @@ void NULL(uart_callback_args_t * p_args);
 #endif
 /* UART Communications Framework Instance. */
             extern const sf_comms_instance_t g_sf_comms0;
-            void g_sf_comms0_err_callback(void * p_instance, void * p_data);
+        void g_sf_comms0_err_callback(void * p_instance, void * p_data);
             void sf_comms_init0(void);
 #ifdef __cplusplus
 } /* extern "C" */

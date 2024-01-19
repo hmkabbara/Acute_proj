@@ -3,7 +3,7 @@
 #include  "tx_api.h"
 #include  "cli.h"
 #include  "menu_builder.h"
-
+#include  "spm_fsm_thread0.h"
                 char   sys_name[32] = "SPM";
                 extern void blinky_thread_create(void);
                 extern void uart_thread0_create(void);
@@ -61,6 +61,7 @@
                     blinky_thread_create();
                     //Add ifdef preprocessor to include CLI or nor here
                     uart_thread0_create();
+                    spm_fsm_thread0_create();
                     // End comments
                     #ifdef TX_USER_ENABLE_TRACE
                     TX_USER_ENABLE_TRACE;
@@ -137,6 +138,7 @@
                     cli_init(&my_data);
                     
                     cli_set_prompt(device_prompt);
+                    //spm_fsm_thread0_entry();
                     __disable_irq();
                     tx_kernel_enter();
                     return 0;
