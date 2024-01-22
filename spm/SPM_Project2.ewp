@@ -2082,10 +2082,10 @@
                         <name>$PROJ_DIR$\src\synergy_gen\blinky_thread.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\src\synergy_gen\cli.c</name>
+                        <name>$PROJ_DIR$\src\synergy_gen\cli_thread.c</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\src\synergy_gen\cli.h</name>
+                        <name>$PROJ_DIR$\src\synergy_gen\cli_thread.h</name>
                     </file>
                     <file>
                         <name>$PROJ_DIR$\src\synergy_gen\common_data.c</name>
@@ -2101,12 +2101,6 @@
                     </file>
                     <file>
                         <name>$PROJ_DIR$\src\synergy_gen\main.c</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\src\synergy_gen\menu_builder.h</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\src\synergy_gen\MenuBuilder.c</name>
                     </file>
                     <file>
                         <name>$PROJ_DIR$\src\synergy_gen\pin_data.c</name>
@@ -2128,7 +2122,22 @@
                     <name>$PROJ_DIR$\src\blinky_thread_entry.c</name>
                 </file>
                 <file>
+                    <name>$PROJ_DIR$\src\cli.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\src\cli.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\src\cli_thread_entry.c</name>
+                </file>
+                <file>
                     <name>$PROJ_DIR$\src\hal_entry.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\src\menu_builder.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\src\MenuBuilder.c</name>
                 </file>
                 <file>
                     <name>$PROJ_DIR$\src\spm_fsm.c</name>

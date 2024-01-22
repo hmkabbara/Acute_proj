@@ -2,7 +2,7 @@
 
 "C:\Program Files (x86)\IAR Systems\Embedded Workbench for Synergy 8.23.3\arm\bin\armjlink2.dll" 
 
-"C:\SPM_Project_ws2\Debug\Exe\SPM_Project2.out" 
+"C:\SPM_Project_ws2\spm\Debug\Exe\SPM_Project2.out" 
 
 --plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench for Synergy 8.23.3\arm\bin\armbat.dll" 
 

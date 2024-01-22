@@ -136,9 +136,8 @@ cli_record_t *current_directory;
 static struct t_nodal_record  *list;
 
 //extern ipglb_card_t card;
-extern char sys_name[32];
+char sys_name[32] = "SPM";
 char cli_prompt[CLI_PROMPT_LEN];
-
 char device_prompt[48] = "SPM";
 
 menu_prio uprio = mon;

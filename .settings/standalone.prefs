@@ -1,4 +1,4 @@
-#Wed Dec 13 18:01:27 EST 2023
+#Wed Jan 17 14:36:07 EST 2024
 com.renesas.cdt.synergy.packs.componentfiles/Renesas\#\#HAL\ Drivers\#\#all\#\#r_sci_uart\#\#\#\#1.7.8/all=synergy/ssp/src/driver/r_sci_uart/r_sci_uart.c|synergy/ssp/src/driver/r_sci_uart/r_sci_uart_private_api.h|synergy/ssp/src/driver/r_sci_uart/hw/hw_sci_common.h|synergy/ssp/src/driver/r_sci_uart/hw/hw_sci_uart_private.h|synergy/ssp/inc/driver/instances/r_sci_uart.h|synergy/ssp/inc/driver/api/r_ioport_api.h|synergy/ssp/inc/driver/api/r_transfer_api.h|synergy/ssp/inc/driver/api/r_uart_api.h
 com.renesas.cdt.synergy.packs.componentfiles/Renesas\#\#HAL\ Drivers\#\#all\#\#r_fmi\#\#\#\#1.7.8/all=synergy/ssp/src/driver/r_fmi/r_fmi.c|synergy/ssp/src/driver/r_fmi/hw/hw_fmi_private.h|synergy/ssp/src/driver/r_fmi/hw/common/hw_fmi_common.h|synergy/ssp/inc/driver/instances/r_fmi.h|synergy/ssp/inc/driver/api/r_fmi_api.h
 com.renesas.cdt.synergy.settingseditor/com.renesas.cdt.synergy.settingseditor.active_page=SWPConfigurator
@@ -9,10 +9,12 @@ com.renesas.cdt.synergy.packs.componentfiles/Renesas\#\#Framework\ Services\#\#a
 com.renesas.cdt.synergy.packs.componentfiles/Renesas\#\#Framework\ Services\#\#all\#\#sf_uart_comms\#\#\#\#1.7.8/libraries=
 com.renesas.cdt.synergy.packs.componentfiles/Renesas\#\#HAL\ Drivers\#\#all\#\#r_fmi\#\#\#\#1.7.8/libraries=
 com.renesas.cdt.synergy.packs.componentfiles/Renesas\#\#HAL\ Drivers\#\#all\#\#r_sci_uart\#\#\#\#1.7.8/libraries=
+com.renesas.cdt.synergy.packs.componentfiles/Renesas\#\#HAL\ Drivers\#\#all\#\#r_icu\#\#\#\#1.7.8/all=synergy/ssp/src/driver/r_icu/r_icu.c|synergy/ssp/src/driver/r_icu/r_icu_private_api.h|synergy/ssp/src/driver/r_icu/hw/hw_icu_private.h|synergy/ssp/src/driver/r_icu/hw/common/hw_icu_common.h|synergy/ssp/inc/driver/instances/r_icu.h|synergy/ssp/inc/driver/api/r_external_irq_api.h
 com.renesas.cdt.synergy.packs.componentfiles/Renesas\#\#HAL\ Drivers\#\#all\#\#r_dtc\#\#\#\#1.7.8/libraries=
 com.renesas.cdt.synergy.packs.componentfiles/Renesas\#\#HAL\ Drivers\#\#all\#\#r_ioport\#\#\#\#1.7.8/libraries=
 com.renesas.cdt.synergy.packs.componentfiles/Renesas\#\#Common\#\#all\#\#ssp_common\#\#\#\#1.7.8/libraries=libDSP_Lib.a
 com.renesas.cdt.synergy.packs.componentfiles/Renesas\#\#BSP\#\#s7g2\#\#device\#\#R7FS7G27H3A01CFC\#\#1.7.8/libraries=
+com.renesas.cdt.synergy.packs.componentfiles/Renesas\#\#HAL\ Drivers\#\#all\#\#r_icu\#\#\#\#1.7.8/libraries=
 com.renesas.cdt.synergy.threads.configurator/collapse/module.driver.uart_on_sci_uart.1928772440=false
 com.renesas.cdt.synergy.packs.componentfiles/Renesas\#\#Projects\#\#all\#\#BlinkyThreadX\#\#\#\#1.7.8/libraries=
 com.renesas.cdt.synergy.packs.componentfiles/Renesas\#\#BSP\#\#Board\#\#s7g2_sk\#\#\#\#1.7.8/libraries=

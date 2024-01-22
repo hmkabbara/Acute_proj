@@ -33,6 +33,9 @@
 #include <inttypes.h>
 //#include "card.h"
 /* define menu priority */
+
+//extern char device_prompt[48];
+extern char device_prompt[48];
 typedef enum { mon, adm, su, nd} menu_prio;
 
 /*  

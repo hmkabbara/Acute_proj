@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench for Synergy 8.23.3\common\bin\cspybat" -f "C:\SPM_Project_ws2\settings\SPM_Project2.Debug.general.xcl" --backend -f "C:\SPM_Project_ws2\settings\SPM_Project2.Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench for Synergy 8.23.3\common\bin\cspybat" -f "C:\SPM_Project_ws2\spm\settings\SPM_Project2.Debug.general.xcl" --backend -f "C:\SPM_Project_ws2\spm\settings\SPM_Project2.Debug.driver.xcl" 
 }
 else
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench for Synergy 8.23.3\common\bin\cspybat" -f "C:\SPM_Project_ws2\settings\SPM_Project2.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\SPM_Project_ws2\settings\SPM_Project2.Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench for Synergy 8.23.3\common\bin\cspybat" -f "C:\SPM_Project_ws2\spm\settings\SPM_Project2.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\SPM_Project_ws2\spm\settings\SPM_Project2.Debug.driver.xcl" 
 }

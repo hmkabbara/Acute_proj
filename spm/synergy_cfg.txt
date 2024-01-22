@@ -390,4 +390,12 @@ Synergy Configuration
     Auto start: Enabled
     Time slicing interval (ticks): 1
     
+  Thread "CLI Thread"
+    Symbol: cli_thread
+    Name: CLI Thread
+    Stack size (bytes): 1024
+    Priority: 1
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
   Messaging
