@@ -1,0 +1,21 @@
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench for Synergy 8.23.3\arm\bin\armproc.dll" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench for Synergy 8.23.3\arm\bin\armjlink2.dll" 
+
+"C:\SPM_Project_ws2\Debug\Exe\SPM_Project2.out" 
+
+--plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench for Synergy 8.23.3\arm\bin\armbat.dll" 
+
+--device_macro "C:\Program Files (x86)\IAR Systems\Embedded Workbench for Synergy 8.23.3\arm\config\debugger\Renesas\R7FS_OCDID.dmac" 
+
+--device_macro "C:\Program Files (x86)\IAR Systems\Embedded Workbench for Synergy 8.23.3\arm\config\debugger\Renesas\R7FS7_CLOCK.dmac" 
+
+--device_macro "C:\Program Files (x86)\IAR Systems\Embedded Workbench for Synergy 8.23.3\arm\config\debugger\Renesas\R7FS_QSPI.dmac" 
+
+--device_macro "C:\Program Files (x86)\IAR Systems\Embedded Workbench for Synergy 8.23.3\arm\config\debugger\Renesas\R7FS7G2.dmac" 
+
+--flash_loader "C:\Program Files (x86)\IAR Systems\Embedded Workbench for Synergy 8.23.3\arm\config\flashloader\Renesas\FlashR7FS7G27H.board" 
+
+
+
+

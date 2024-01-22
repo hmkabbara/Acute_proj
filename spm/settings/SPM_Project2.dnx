@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<settings>
+    <InterruptLog>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+        <SumSortOrder>0</SumSortOrder>
+    </InterruptLog>
+    <DataLog>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+    </DataLog>
+    <Stack>
+        <FillEnabled>0</FillEnabled>
+        <OverflowWarningsEnabled>1</OverflowWarningsEnabled>
+        <WarningThreshold>90</WarningThreshold>
+        <SpWarningsEnabled>1</SpWarningsEnabled>
+        <WarnLogOnly>1</WarnLogOnly>
+        <UseTrigger>1</UseTrigger>
+        <TriggerName>main</TriggerName>
+        <LimitSize>0</LimitSize>
+        <ByteLimit>50</ByteLimit>
+    </Stack>
+    <Interrupts>
+        <Enabled>1</Enabled>
+    </Interrupts>
+    <MemConfig>
+        <Base>1</Base>
+        <Manual>0</Manual>
+        <Ddf>1</Ddf>
+        <TypeViol>0</TypeViol>
+        <Stop>1</Stop>
+    </MemConfig>
+    <Simulator>
+        <Freq>10000000</Freq>
+        <FreqHi>0</FreqHi>
+        <MultiCoreRunAll>1</MultiCoreRunAll>
+    </Simulator>
+    <JLinkDriver>
+        <CStepIntDis>_ 0</CStepIntDis>
+        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
+    </JLinkDriver>
+    <Exceptions>
+        <StopOnUncaught>_ 0</StopOnUncaught>
+        <StopOnThrow>_ 0</StopOnThrow>
+    </Exceptions>
+    <DebugChecksum>
+        <Checksum>3658178261</Checksum>
+    </DebugChecksum>
+    <CodeCoverage>
+        <Enabled>_ 0</Enabled>
+    </CodeCoverage>
+    <Disassembly>
+        <InstrCount>0</InstrCount>
+        <MixedMode>1</MixedMode>
+    </Disassembly>
+    <CallStack>
+        <ShowArgs>0</ShowArgs>
+    </CallStack>
+    <Trace1>
+        <Enabled>0</Enabled>
+        <ShowSource>1</ShowSource>
+    </Trace1>
+    <LogFile>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </LogFile>
+    <TermIOLog>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+    </TermIOLog>
+    <DriverProfiling>
+        <Enabled>0</Enabled>
+        <Mode>1</Mode>
+        <Graph>0</Graph>
+        <Symbiont>0</Symbiont>
+        <Exclusions />
+    </DriverProfiling>
+    <CallStackLog>
+        <Enabled>0</Enabled>
+    </CallStackLog>
+    <CallStackStripe>
+        <ShowTiming>1</ShowTiming>
+    </CallStackStripe>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
+    <Breakpoints2>
+        <Bp0>_ 0 "EMUL_CODE" "{$PROJ_DIR$\src\synergy_gen\spm_fsm_thread0.c}.17.21" 0 0 1 "" 0 "" 0</Bp0>
+        <Count>1</Count>
+    </Breakpoints2>
+    <Aliases>
+        <A0>_ "D:\jenkins_repos\SSP-AddOns\ssp\src\framework\el\tx\tx_src\synergy\tx_initialize_low_level.c" ""</A0>
+        <A1>_ "D:\jenkins_repos\SSP-AddOns\ssp\src\framework\el\tx\tx_src\synergy\tx_thread_schedule.c" ""</A1>
+        <A2>_ "D:\jenkins_repos\SSP-AddOns\ssp\src\framework\el\tx\tx_src\tx_initialize_kernel_enter.c" ""</A2>
+        <A3>_ "D:\jenkins_repos\SSP-AddOns\ssp\src\framework\el\tx\tx_src\tx_semaphore_create.c" ""</A3>
+        <A4>_ "D:\jenkins_repos\SSP-AddOns\ssp\src\framework\el\tx\tx_src\tx_semaphore_get.c" ""</A4>
+        <A5>_ "D:\jenkins_repos\SSP-AddOns\ssp\src\framework\el\tx\tx_src\tx_semaphore_put.c" ""</A5>
+        <A6>_ "D:\jenkins_repos\SSP-AddOns\ssp\src\framework\el\tx\tx_src\tx_thread_shell_entry.c" ""</A6>
+        <A7>_ "D:\jenkins_repos\SSP-AddOns\ssp\src\framework\el\tx\tx_src\tx_thread_sleep.c" ""</A7>
+        <A8>_ "D:\jenkins_repos\SSP-AddOns\ssp\src\framework\el\tx\tx_src\tx_thread_timeout.c" ""</A8>
+        <A9>_ "D:\jenkins_repos\SSP-AddOns\ssp\src\framework\el\tx\tx_src\txe_semaphore_create.c" ""</A9>
+        <A10>_ "D:\jenkins_repos\SSP-AddOns\ssp\src\framework\el\tx\tx_src\txe_semaphore_put.c" ""</A10>
+        <A11>_ "D:\jenkins_repos\SSP-AddOns\ssp\src\framework\el\tx\tx_src\txe_thread_create.c" ""</A11>
+        <Count>12</Count>
+        <SuppressDialog>1</SuppressDialog>
+    </Aliases>
+</settings>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iarUserArgVars>
+    <group name="Renesas Synergy" active="true">
+        <variable>
+            <name>RENESAS_SYNERGY_INSTALLDIR</name>
+            <value>C:\Renesas\Synergy\ssc_v7.5.1_ssp_v1.7.0</value>
+        </variable>
+        <variable>
+            <name>RENESAS_SYNERGY_LICENSEFILE</name>
+            <value>C:\Renesas\Synergy\SSP_Development_and_Production_License_20190911.xml</value>
+        </variable>
+        <variable>
+            <name>AMS_KEEP_FILE</name>
+            <value>false</value>
+        </variable>
+    </group>
+</iarUserArgVars>
